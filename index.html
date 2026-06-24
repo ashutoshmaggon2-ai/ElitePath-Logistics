@@ -1,13 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>elite path logistics — on time. every time. everywhere.</title>
+<title>Elite Path Logistics — On Time. Every Time. Everywhere.</title>
 <link rel="canonical" href="https://elitepathlogistics.in/">
-<link href="https://fonts.googleapis.com/css2?family=bebas+neue&family=barlow:wght@300;400;500;600;700&family=barlow+condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* === reset & variables === */
+/* === RESET & VARIABLES === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --green: #185b38;
@@ -18,16 +18,16 @@
   --white: #ffffff;
   --off-white: #ebe7dc;
   --black: #0a0a0a;
-  --font-display: 'bebas neue', sans-serif;
-  --font-body: 'barlow', sans-serif;
-  --font-condensed: 'barlow condensed', sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
 }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--off-white); color: var(--green-dark); overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
-/* === utility === */
+/* === UTILITY === */
 .container { max-width: 1320px; margin: 0 auto; padding: 0 1rem; }
 .hero,
 .services,
@@ -43,14 +43,14 @@ footer {
   border-bottom: 2px solid var(--gold);
 }
 
-/* === nav === */
+/* === NAV === */
 nav {
   position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
   background: rgba(14, 58, 37, 0.96); backdrop-filter: blur(12px);
   border-bottom: 3px solid var(--gold);
   transition: transform 0.35s ease, background 0.4s ease, border-color 0.4s ease;
 }
-nav.nav-hidden { transform: translatey(-100%); }
+nav.nav-hidden { transform: translateY(-100%); }
 nav .nav-inner {
   max-width: 1320px; margin: 0 auto; padding: 0.8rem 1rem;
   display: flex; align-items: center; justify-content: space-between;
@@ -84,7 +84,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { width: 28px; height: 2px; background: var(--white); transition: 0.3s; }
 
-/* === hero === */
+/* === HERO === */
 .hero {
   min-height: 100vh; display: flex; align-items: center; position: relative;
   background: url('india-trucks-hero.png') center center/cover no-repeat;
@@ -135,7 +135,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   box-shadow: inset 0 0 0 2px var(--gold);
   position: relative; overflow: hidden;
 }
-.btn-primary:hover { background: var(--gold); color: var(--green-dark); transform: translatey(-2px); }
+.btn-primary:hover { background: var(--gold); color: var(--green-dark); transform: translateY(-2px); }
 .btn-secondary {
   background: var(--green-dark); color: var(--white); padding: 1rem 2.5rem;
   font-family: var(--font-condensed); font-weight: 700; font-size: 1rem;
@@ -144,18 +144,18 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   box-shadow: inset 0 0 0 2px var(--gold);
   position: relative; overflow: hidden;
 }
-.btn-secondary:hover { background: var(--gold); color: var(--green-dark); transform: translatey(-2px); }
+.btn-secondary:hover { background: var(--gold); color: var(--green-dark); transform: translateY(-2px); }
 .btn-primary::before,
 .btn-secondary::before {
   content: ''; position: absolute; top: 0; left: -75%; width: 45%; height: 100%;
   background: linear-gradient(120deg, transparent, rgba(255,255,255,0.28), transparent);
-  transform: skewx(-18deg); transition: left 0.6s ease;
+  transform: skewX(-18deg); transition: left 0.6s ease;
 }
 .btn-primary:hover::before,
 .btn-secondary:hover::before {
   left: 130%;
 }
-/* === services === */
+/* === SERVICES === */
 .services { padding: 7rem 0; position: relative; background: #e4dfd2; overflow: hidden; }
 .services::after {
   content: ''; position: absolute; inset: 0;
@@ -203,7 +203,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0;
   background: var(--gold); transition: height 0.4s ease;
 }
-.service-card:hover { transform: translatey(-6px); box-shadow: 0 24px 55px rgba(14,58,37,0.2); }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 24px 55px rgba(14,58,37,0.2); }
 .service-card:hover::before { height: 100%; }
 .service-icon {
   width: 56px; height: 56px; background: var(--green); display: flex;
@@ -217,7 +217,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 }
 .service-card p { font-size: 0.95rem; color: #5a6b60; line-height: 1.7; }
 
-/* === stats === */
+/* === STATS === */
 .stats {
   background: #1f5c3a; padding: 5rem 0; position: relative; overflow: hidden;
 }
@@ -240,7 +240,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   margin-top: 0.5rem;
 }
 
-/* === about === */
+/* === ABOUT === */
 .about { padding: 7rem 0; background: #ebe7dc; position: relative; overflow: hidden; }
 .about::before {
   content: ''; position: absolute; inset: 0;
@@ -271,12 +271,12 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 }
 .about-image-inner img {
   width: 60%; opacity: 1;
-  animation: aboutlogorotatesideways 6s linear infinite;
+  animation: aboutLogoRotateSideways 6s linear infinite;
   transform-style: preserve-3d;
 }
-@keyframes aboutlogorotatesideways {
-  from { transform: perspective(700px) rotatey(0deg); }
-  to { transform: perspective(700px) rotatey(360deg); }
+@keyframes aboutLogoRotateSideways {
+  from { transform: perspective(700px) rotateY(0deg); }
+  to { transform: perspective(700px) rotateY(360deg); }
 }
 .about-text h2 {
   font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -298,7 +298,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
 }
 
-/* === team === */
+/* === TEAM === */
 .team {
   padding: 7rem 0; background: #0e3a25; position: relative; overflow: hidden;
 }
@@ -322,7 +322,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   position: relative; overflow: hidden; background-size: cover; background-position: center;
 }
 .team-card:hover {
-  transform: translatey(-8px); border-color: var(--gold);
+  transform: translateY(-8px); border-color: var(--gold);
 }
 .team-card:nth-child(1) {
   background-image:
@@ -359,7 +359,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 }
 .team-card p { color: rgba(255,255,255,0.68); line-height: 1.7; font-size: 0.95rem; }
 
-/* === fleet === */
+/* === FLEET === */
 .fleet {
   padding: 7rem 0; background: #f5f2e9; position: relative; overflow: hidden;
 }
@@ -385,10 +385,10 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 }
 .fleet-card::after {
   content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px;
-  background: var(--gold); transform: scalex(0); transition: transform 0.4s;
+  background: var(--gold); transform: scaleX(0); transition: transform 0.4s;
 }
-.fleet-card:hover { transform: translatey(-4px); box-shadow: 0 18px 42px rgba(14,58,37,0.18); }
-.fleet-card:hover::after { transform: scalex(1); }
+.fleet-card:hover { transform: translateY(-4px); box-shadow: 0 18px 42px rgba(14,58,37,0.18); }
+.fleet-card:hover::after { transform: scaleX(1); }
 .fleet-icon {
   width: 80px; height: 80px; margin: 0 auto 1.5rem;
   background: var(--green); display: flex; align-items: center; justify-content: center;
@@ -411,7 +411,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   clip-path: polygon(4% 0, 96% 0, 100% 100%, 0 100%);
 }
 
-/* === gallery === */
+/* === GALLERY === */
 .gallery {
   padding: 7rem 0; background: #0e3a25; position: relative; overflow: hidden;
 }
@@ -429,7 +429,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   padding: 1.25rem 0.75rem 2rem; transform: translate3d(0, 0, 0);
 }
 .gallery-grid.is-ready {
-  animation: gallerymarquee 72s linear infinite;
+  animation: galleryMarquee 72s linear infinite;
 }
 .gallery-slider:hover .gallery-grid { animation-play-state: paused; }
 .gallery-item {
@@ -458,10 +458,10 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 .gallery-lightbox img {
   max-width: min(1100px, 94vw); max-height: 86vh; object-fit: contain;
   border: 3px solid var(--gold); box-shadow: 0 30px 90px rgba(0,0,0,0.55);
-  animation: gallerypop 0.28s ease-out both;
+  animation: galleryPop 0.28s ease-out both;
 }
 .lightbox-arrow {
-  position: absolute; top: 50%; transform: translatey(-50%);
+  position: absolute; top: 50%; transform: translateY(-50%);
   width: 58px; height: 58px; border: 2px solid var(--gold); border-radius: 0;
   background: rgba(14,58,37,0.88); color: var(--gold); cursor: pointer;
   font-family: var(--font-condensed); font-size: 2rem; font-weight: 700;
@@ -469,20 +469,20 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 .lightbox-arrow:hover {
-  background: var(--gold); color: var(--green-dark); transform: translatey(-50%) scale(1.08);
+  background: var(--gold); color: var(--green-dark); transform: translateY(-50%) scale(1.08);
 }
 .lightbox-arrow.prev { left: 2rem; }
 .lightbox-arrow.next { right: 2rem; }
-@keyframes gallerypop {
+@keyframes galleryPop {
   from { opacity: 0; transform: scale(0.86); }
   to { opacity: 1; transform: scale(1); }
 }
-@keyframes gallerymarquee {
+@keyframes galleryMarquee {
   from { transform: translate3d(0, 0, 0); }
   to { transform: translate3d(-50%, 0, 0); }
 }
 
-/* === contact === */
+/* === CONTACT === */
 .contact {
   padding: 7rem 0; background: var(--off-white); position: relative; overflow: hidden;
 }
@@ -539,7 +539,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); transition: all 0.3s;
   align-self: flex-start;
 }
-.contact-form button:hover { background: var(--gold-light); transform: translatey(-2px); }
+.contact-form button:hover { background: var(--gold-light); transform: translateY(-2px); }
 
 .services,
 .about,
@@ -576,7 +576,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 }
 .thank-you-box button:hover { background: var(--gold-light); }
 
-/* === partners === */
+/* === PARTNERS === */
 .partners-conveyor {
   background: var(--green-dark); overflow: hidden; padding: 3rem 0;
 }
@@ -587,7 +587,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 }
 .partners-track {
   display: flex; width: max-content; gap: 1.5rem;
-  animation: conveyormove 22s linear infinite;
+  animation: conveyorMove 22s linear infinite;
   will-change: transform;
   backface-visibility: hidden;
 }
@@ -596,15 +596,15 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   background: var(--off-white); border: 2px solid rgba(242,183,5,0.7);
   display: flex; align-items: center; justify-content: center; padding: 0.75rem;
   backface-visibility: hidden;
-  transform: translatez(0);
+  transform: translateZ(0);
 }
 .partner-card img { width: 100%; height: 100%; object-fit: contain; }
-@keyframes conveyormove {
+@keyframes conveyorMove {
   from { transform: translate3d(0, 0, 0); }
   to { transform: translate3d(-50%, 0, 0); }
 }
 
-/* === footer === */
+/* === FOOTER === */
 footer {
   background: var(--off-white); padding: 1.35rem 0 0.8rem;
 }
@@ -636,21 +636,21 @@ footer {
 .footer-social a svg { width: 16px; height: 16px; fill: var(--white); }
 .footer-social a:hover svg { fill: var(--green-dark); }
 
-/* === animations === */
-@keyframes fadeinup {
-  from { opacity: 0; transform: translatey(40px); }
-  to { opacity: 1; transform: translatey(0); }
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-@keyframes fadeinleft {
-  from { opacity: 0; transform: translatex(-40px); }
-  to { opacity: 1; transform: translatex(0); }
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-@keyframes slidein {
-  from { opacity: 0; transform: translatey(30px); }
-  to { opacity: 1; transform: translatey(0); }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.reveal { opacity: 0; transform: translatey(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-.reveal.visible { opacity: 1; transform: translatey(0); }
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 .gallery .gallery-item.reveal {
   opacity: 1;
   transform: none;
@@ -661,12 +661,12 @@ footer {
   box-shadow: 0 26px 60px rgba(0,0,0,0.38);
   z-index: 5;
 }
-.hero-text h1 { animation: fadeinleft 1s ease 0.2s both; }
-.hero-text .tagline { animation: fadeinleft 1s ease 0.4s both; }
-.hero-text p { animation: fadeinleft 1s ease 0.6s both; }
-.hero-buttons { animation: fadeinleft 1s ease 0.8s both; }
+.hero-text h1 { animation: fadeInLeft 1s ease 0.2s both; }
+.hero-text .tagline { animation: fadeInLeft 1s ease 0.4s both; }
+.hero-text p { animation: fadeInLeft 1s ease 0.6s both; }
+.hero-buttons { animation: fadeInLeft 1s ease 0.8s both; }
 
-/* === responsive === */
+/* === RESPONSIVE === */
 @media (max-width: 968px) {
   .hero-content { grid-template-columns: 1fr; text-align: center; padding-top: 7rem; }
   .hero-text p { margin: 0 auto 2.5rem; }
@@ -694,271 +694,271 @@ footer {
 </head>
 <body>
 
-<!-- nav -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <img src="elite-path-logo-no-white.png" alt="elite path logistics logo">
+      <img src="elite-path-logo-no-white.png" alt="Elite Path Logistics logo">
     </a>
     <ul>
-      <li><a href="#about">about</a></li>
-      <li><a href="#team">team</a></li>
-      <li><a href="#services">services</a></li>
-      <li><a href="#fleet">fleet</a></li>
-      <li><a href="#gallery">gallery</a></li>
-      <li><a href="#contact">contact</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="hamburger" onclick="this.classlist.toggle('active')">
+    <div class="hamburger" onclick="this.classList.toggle('active')">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
 
-<!-- hero -->
+<!-- HERO -->
 <section class="hero">
   <div class="hero-road"></div>
   <div class="hero-content">
     <div class="hero-text">
-      <h1><span>elite</span><span class="gold">path</span><span> logistics</span></h1>
-      <div class="tagline">on time. every time. everywhere.</div>
-      <p>premium freight and logistics solutions engineered for businesses that demand reliability. from local delivery to interstate supply chains, we forge the elite path your cargo deserves.</p>
+      <h1><span>ELITE</span><span class="gold">PATH</span><span> LOGISTICS</span></h1>
+      <div class="tagline">On Time. Every Time. Everywhere.</div>
+      <p>Premium freight and logistics solutions engineered for businesses that demand reliability. From local delivery to interstate supply chains, we forge the elite path your cargo deserves.</p>
       <div class="hero-buttons">
-        <button class="btn-secondary" onclick="scrolltosection('services')">our services</button>
-        <button class="btn-primary" onclick="scrolltosection('contact')">request a quote</button>
+        <button class="btn-secondary" onclick="scrollToSection('services')">Our Services</button>
+        <button class="btn-primary" onclick="scrollToSection('contact')">Request a Quote</button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- about -->
+<!-- ABOUT -->
 <section class="about" id="about">
   <div class="container">
     <div class="about-grid">
       <div class="about-image reveal">
         <div class="about-image-inner">
-          <img src="elite-path-logo-no-white.png" alt="elite path logistics">
+          <img src="elite-path-logo-no-white.png" alt="Elite Path Logistics">
         </div>
       </div>
       <div class="about-text">
-        <div class="section-label reveal">who we are</div>
-        <h2 class="reveal">forging logistics excellence<br>since 2007</h2>
-        <p class="reveal">elite path logistics was founded on a simple principle: every shipment deserves the highest standard of care. what began as a regional carrier has grown into a full-spectrum logistics partner trusted by enterprises across the nation.</p>
-        <p class="reveal">our fleet of 350+ vehicles, combined with cutting-edge route optimization and a team of seasoned dispatchers, ensures your cargo moves efficiently through the safest and fastest corridors available.</p>
-        <p class="reveal">with live tracking, responsive support, and disciplined dispatch planning, we keep every load visible, secure, and on schedule from pickup to destination.</p>
+        <div class="section-label reveal">Who We Are</div>
+        <h2 class="reveal">Forging Logistics Excellence<br>Since 2007</h2>
+        <p class="reveal">Elite Path Logistics was founded on a simple principle: every shipment deserves the highest standard of care. What began as a regional carrier has grown into a full-spectrum logistics partner trusted by enterprises across the nation.</p>
+        <p class="reveal">Our fleet of 350+ vehicles, combined with cutting-edge route optimization and a team of seasoned dispatchers, ensures your cargo moves efficiently through the safest and fastest corridors available.</p>
+        <p class="reveal">With live tracking, responsive support, and disciplined dispatch planning, we keep every load visible, secure, and on schedule from pickup to destination.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- team -->
+<!-- TEAM -->
 <section class="team" id="team">
   <div class="container">
-    <div class="section-label reveal">our team</div>
-    <h2 class="section-title reveal">people behind every delivery</h2>
-    <p class="section-subtitle reveal">a disciplined operations team coordinating dispatch, fleet readiness, route planning, and customer support for dependable interstate movement.</p>
+    <div class="section-label reveal">Our Team</div>
+    <h2 class="section-title reveal">People Behind Every Delivery</h2>
+    <p class="section-subtitle reveal">A disciplined operations team coordinating dispatch, fleet readiness, route planning, and customer support for dependable interstate movement.</p>
     <div class="team-grid">
       <div class="team-card reveal">
         <div>
           <div class="team-icon">
-            <svg viewbox="0 0 24 24"><path d="m12 2l4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11v5l-8-3zm0 4.2l4 1.5v11c0 2.9-1.6 5.7-4 7.2-2.4-1.5-4-4.3-4-7.2v7.7l4-1.5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm0 4.2l4 1.5V11c0 2.9-1.6 5.7-4 7.2-2.4-1.5-4-4.3-4-7.2V7.7l4-1.5z"/></svg>
           </div>
-          <h3>operations</h3>
-          <p>plans each load with clear documentation, route discipline, and accountability from pickup to delivery.</p>
+          <h3>Operations</h3>
+          <p>Plans each load with clear documentation, route discipline, and accountability from pickup to delivery.</p>
         </div>
       </div>
       <div class="team-card reveal">
         <div>
           <div class="team-icon">
-            <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4zm8 18.5a1.5 1.5 0 118 15.5a1.5 1.5 0 010 3zm10 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm17 12v9.5h2.4l1.9 2.5h17z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4zM8 18.5A1.5 1.5 0 118 15.5a1.5 1.5 0 010 3zm10 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM17 12V9.5h2.4l1.9 2.5H17z"/></svg>
           </div>
-          <h3>fleet control</h3>
-          <p>monitors vehicle readiness, driver coordination, and load security before every movement begins.</p>
+          <h3>Fleet Control</h3>
+          <p>Monitors vehicle readiness, driver coordination, and load security before every movement begins.</p>
         </div>
       </div>
       <div class="team-card reveal">
         <div>
           <div class="team-icon">
-            <svg viewbox="0 0 24 24"><path d="m12 2a8 8 0 00-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 00-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
           </div>
-          <h3>dispatch</h3>
-          <p>keeps shipments moving with live route updates, fast decisions, and round-the-clock coordination.</p>
+          <h3>Dispatch</h3>
+          <p>Keeps shipments moving with live route updates, fast decisions, and round-the-clock coordination.</p>
         </div>
       </div>
       <div class="team-card reveal">
         <div>
           <div class="team-icon">
-            <svg viewbox="0 0 24 24"><path d="m12 1a9 9 0 00-9 9v7a3 3 0 003 3h3v-8h5v-2a7 7 0 0114 0v2h-4v8h3a3 3 0 003-3v-7a9 9 0 00-9-9z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 1a9 9 0 00-9 9v7a3 3 0 003 3h3v-8H5v-2a7 7 0 0114 0v2h-4v8h3a3 3 0 003-3v-7a9 9 0 00-9-9z"/></svg>
           </div>
-          <h3>support</h3>
-          <p>responds quickly with shipment status, delivery updates, and practical help whenever clients need it.</p>
+          <h3>Support</h3>
+          <p>Responds quickly with shipment status, delivery updates, and practical help whenever clients need it.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- services -->
+<!-- SERVICES -->
 <section class="services" id="services">
   <div class="container">
-    <div class="section-label reveal">what we do</div>
-    <h2 class="section-title reveal">our core services</h2>
-    <p class="section-subtitle reveal">end-to-end logistics solutions built on precision, speed, and an unwavering commitment to getting your goods where they need to be.</p>
+    <div class="section-label reveal">What We Do</div>
+    <h2 class="section-title reveal">Our Core Services</h2>
+    <p class="section-subtitle reveal">End-to-end logistics solutions built on precision, speed, and an unwavering commitment to getting your goods where they need to be.</p>
     <div class="services-grid">
       <div class="service-card reveal">
         <div class="service-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>freight transport</h3>
-        <p>full truckload and less-than-truckload shipping across all major states. gps-tracked, insured, and delivered on schedule.</p>
+        <h3>Freight Transport</h3>
+        <p>Full truckload and less-than-truckload shipping across all major states. GPS-tracked, insured, and delivered on schedule.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">
-          <svg viewbox="0 0 24 24"><path d="m12 2c6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10s17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79l9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1h8v-2h2c.55 0 1-.45 1-1v7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
         </div>
-        <h3>live tracking</h3>
-        <p>real-time gps tracking for every shipment. monitor your cargo location, status, and estimated arrival from any device, anytime.</p>
+        <h3>Live Tracking</h3>
+        <p>Real-time GPS tracking for every shipment. Monitor your cargo location, status, and estimated arrival from any device, anytime.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">
-          <svg viewbox="0 0 24 24"><path d="m12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8h5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
         </div>
-        <h3>24/7 support</h3>
-        <p>round-the-clock customer support with dedicated account managers. get instant assistance via phone or email.</p>
+        <h3>24/7 Support</h3>
+        <p>Round-the-clock customer support with dedicated account managers. Get instant assistance via phone or email.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">
-          <svg viewbox="0 0 24 24"><path d="m19 3h5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v5c0-1.1-.9-2-2-2zm-5 14h7v-2h7v2zm3-4h7v-2h10v2zm0-4h7v7h10v2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
         </div>
-        <h3>supply chain</h3>
-        <p>complete supply chain management from procurement logistics to last-mile delivery. data-driven optimization at every node.</p>
+        <h3>Supply Chain</h3>
+        <p>Complete supply chain management from procurement logistics to last-mile delivery. Data-driven optimization at every node.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">
-          <svg viewbox="0 0 24 24"><path d="m3 7h9v-4l9 9-9 9v-4h3v-3h11.5l3-2-3-2h3v7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M3 7h9v-4l9 9-9 9v-4H3v-3h11.5l3-2-3-2H3V7z"/></svg>
         </div>
-        <h3>express delivery</h3>
-        <p>time-critical shipments with guaranteed delivery windows. same-day and next-day options for urgent freight needs.</p>
+        <h3>Express Delivery</h3>
+        <p>Time-critical shipments with guaranteed delivery windows. Same-day and next-day options for urgent freight needs.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">
-          <svg viewbox="0 0 24 24"><path d="m12 1l3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12v5l-9-4zm-2 16l-4-4 1.41-1.41l10 14.17l6.59-6.59l18 9l-8 8z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
         </div>
-        <h3>fully secured load</h3>
-        <p>secure loading practices for every shipment. properly checked, protected, and monitored from pickup to final delivery.</p>
+        <h3>Fully Secured Load</h3>
+        <p>Secure loading practices for every shipment. Properly checked, protected, and monitored from pickup to final delivery.</p>
       </div>
       <div class="service-card reveal">
         <div class="service-icon">
-          <svg viewbox="0 0 24 24"><path d="m12 1c-6.08 0-11 4.92-11 11s4.92 11 11 11 11-4.92 11-11s18.08 1 12 1zm0 20c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9zm.5-14h11v6l5.25 3.15.75-1.23-4.5-2.67v7z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 1c-6.08 0-11 4.92-11 11s4.92 11 11 11 11-4.92 11-11S18.08 1 12 1zm0 20c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9zm.5-14H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
         </div>
-        <h3>on-time guarantee</h3>
-        <p>reliable scheduling and route planning to keep every shipment moving on time, every time.</p>
+        <h3>On-Time Guarantee</h3>
+        <p>Reliable scheduling and route planning to keep every shipment moving on time, every time.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- stats -->
+<!-- STATS -->
 <section class="stats">
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item reveal">
         <div class="stat-number" data-target="19">0</div>
-        <div class="stat-label">years of experience</div>
+        <div class="stat-label">Years of Experience</div>
       </div>
       <div class="stat-item reveal">
         <div class="stat-number" data-target="350" data-suffix="+">0</div>
-        <div class="stat-label">projected deliveries per month</div>
+        <div class="stat-label">Projected Deliveries Per Month</div>
       </div>
       <div class="stat-item reveal">
         <div class="stat-number" data-target="98">0</div>
-        <div class="stat-label">on-time rate %</div>
+        <div class="stat-label">On-Time Rate %</div>
       </div>
       <div class="stat-item reveal">
-        <div class="stat-number">pan-india</div>
-        <div class="stat-label">coverage</div>
+        <div class="stat-number">Pan-India</div>
+        <div class="stat-label">Coverage</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- fleet -->
+<!-- FLEET -->
 <section class="fleet" id="fleet">
   <div class="container">
-    <div class="section-label reveal">our fleet</div>
-    <h2 class="section-title reveal">built for every load</h2>
-    <p class="section-subtitle reveal">from last-mile vans to heavy-haul flatbeds, our diverse fleet handles any shipment size with precision and care.</p>
+    <div class="section-label reveal">Our Fleet</div>
+    <h2 class="section-title reveal">Built for Every Load</h2>
+    <p class="section-subtitle reveal">From last-mile vans to heavy-haul flatbeds, our diverse fleet handles any shipment size with precision and care.</p>
     <div class="fleet-grid">
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>4w pickup/lcv</h3>
-        <p>10ft-17ft | 1mt-5mt</p>
+        <h3>4W Pickup/LCV</h3>
+        <p>10ft-17ft | 1MT-5MT</p>
       </div>
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>6w lcv/canter</h3>
-        <p>19ft-22ft | 7.5mt-12.5mt</p>
+        <h3>6W LCV/Canter</h3>
+        <p>19ft-22ft | 7.5MT-12.5MT</p>
       </div>
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>10w-14w lorry/truck</h3>
-        <p>22ft-30ft | 18mt-30mt</p>
+        <h3>10W-14W Lorry/Truck</h3>
+        <p>22ft-30ft | 18MT-30MT</p>
       </div>
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>16w-20w trailer</h3>
-        <p>30ft-40ft | 35mt-40mt</p>
+        <h3>16W-20W Trailer</h3>
+        <p>30ft-40ft | 35MT-40MT</p>
       </div>
     </div>
-    <h3 class="fleet-subtitle reveal">container vehicles</h3>
+    <h3 class="fleet-subtitle reveal">Container Vehicles</h3>
     <div class="fleet-grid">
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>single xl</h3>
-        <p>32ft | 7.5mt</p>
+        <h3>Single XL</h3>
+        <p>32ft | 7.5MT</p>
       </div>
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>multi xl</h3>
-        <p>32ft | 18mt</p>
+        <h3>Multi XL</h3>
+        <p>32ft | 18MT</p>
       </div>
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>3xl</h3>
-        <p>32ft | 24.5mt</p>
+        <h3>3XL</h3>
+        <p>32ft | 24.5MT</p>
       </div>
       <div class="fleet-card reveal">
         <div class="fleet-icon">
-          <svg viewbox="0 0 24 24"><path d="m20 8h-3v4h3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5h17v9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
         </div>
-        <h3>4xl</h3>
-        <p>32ft | 29.5mt</p>
+        <h3>4XL</h3>
+        <p>32ft | 29.5MT</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- gallery -->
+<!-- GALLERY -->
 <section class="gallery" id="gallery">
   <div class="container">
-    <div class="section-label reveal">gallery</div>
-    <h2 class="section-title reveal">on the move</h2>
-    <p class="section-subtitle reveal">a look at the road, fleet, and partner network that keeps freight moving across india.</p>
+    <div class="section-label reveal">Gallery</div>
+    <h2 class="section-title reveal">On the Move</h2>
+    <p class="section-subtitle reveal">A look at the road, fleet, and partner network that keeps freight moving across India.</p>
     <div class="gallery-slider">
-      <div class="gallery-grid" id="gallerytrack">
+      <div class="gallery-grid" id="galleryTrack">
         <div class="gallery-item reveal" data-image="gallery/truck-01.jpg" style="background-image: url('gallery/truck-01.jpg');">
         </div>
         <div class="gallery-item reveal" data-image="gallery/truck-02.jpg" style="background-image: url('gallery/truck-02.jpg');">
@@ -1034,298 +1034,298 @@ footer {
   </div>
 </section>
 
-<!-- partners -->
-<section class="partners-conveyor" aria-label="our partners">
-  <h2 class="partners-title">our partners</h2>
+<!-- PARTNERS -->
+<section class="partners-conveyor" aria-label="Our partners">
+  <h2 class="partners-title">Our Partners</h2>
   <div class="partners-track">
-    <div class="partner-card"><img src="partner-logos/ardex-endura.jpg" alt="ardex endura"></div>
-    <div class="partner-card"><img src="partner-logos/sika.png" alt="sika"></div>
-    <div class="partner-card"><img src="partner-logos/pioneer-panel-products.jpg" alt="pioneer panel products"></div>
-    <div class="partner-card"><img src="partner-logos/adlerwud.jpg" alt="adlerwud"></div>
-    <div class="partner-card"><img src="partner-logos/aldura.jpeg" alt="aldura"></div>
-    <div class="partner-card"><img src="partner-logos/apl-apollo.png" alt="apl apollo"></div>
-    <div class="partner-card"><img src="partner-logos/bansal.png" alt="bansal"></div>
-    <div class="partner-card"><img src="partner-logos/fosroc.jpg" alt="fosroc"></div>
-    <div class="partner-card"><img src="partner-logos/kerakoll.png" alt="kerakoll"></div>
-    <div class="partner-card"><img src="partner-logos/mapei.jpeg" alt="mapei"></div>
-    <div class="partner-card"><img src="partner-logos/vectus.jpeg" alt="vectus"></div>
-    <div class="partner-card"><img src="partner-logos/meraki.jpg" alt="meraki"></div>
+    <div class="partner-card"><img src="partner-logos/ardex-endura.jpg" alt="Ardex Endura"></div>
+    <div class="partner-card"><img src="partner-logos/sika.png" alt="Sika"></div>
+    <div class="partner-card"><img src="partner-logos/pioneer-panel-products.jpg" alt="Pioneer Panel Products"></div>
+    <div class="partner-card"><img src="partner-logos/adlerwud.jpg" alt="Adlerwud"></div>
+    <div class="partner-card"><img src="partner-logos/aldura.jpeg" alt="Aldura"></div>
+    <div class="partner-card"><img src="partner-logos/apl-apollo.png" alt="APL Apollo"></div>
+    <div class="partner-card"><img src="partner-logos/bansal.png" alt="Bansal"></div>
+    <div class="partner-card"><img src="partner-logos/fosroc.jpg" alt="Fosroc"></div>
+    <div class="partner-card"><img src="partner-logos/kerakoll.png" alt="Kerakoll"></div>
+    <div class="partner-card"><img src="partner-logos/mapei.jpeg" alt="Mapei"></div>
+    <div class="partner-card"><img src="partner-logos/vectus.jpeg" alt="Vectus"></div>
+    <div class="partner-card"><img src="partner-logos/meraki.jpg" alt="Meraki"></div>
   </div>
 </section>
 
-<!-- contact -->
+<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <div class="section-label reveal" style="color: var(--gold);">get in touch</div>
-        <h2 class="reveal">let's move your<br>business forward</h2>
-        <p class="reveal">ready to move your goods across the country? elitepath logistics is here to provide reliable and efficient transportation services.</p>
+        <div class="section-label reveal" style="color: var(--gold);">Get in Touch</div>
+        <h2 class="reveal">Let's Move Your<br>Business Forward</h2>
+        <p class="reveal">Ready to move your goods across the country? ElitePath Logistics is here to provide reliable and efficient transportation services.</p>
         <div class="contact-detail reveal">
           <div class="contact-detail-icon">
-            <svg viewbox="0 0 24 24"><path d="m20 4h4c-1.1 0-1.99.9-1.99 2l2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5v6l8 5 8-5v2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </div>
           <div class="contact-detail-text"><a href="mailto:elitepathlogistics2005@gmail.com">elitepathlogistics2005@gmail.com</a></div>
         </div>
         <div class="contact-detail reveal">
           <div class="contact-detail-icon">
-            <svg viewbox="0 0 24 24"><path d="m6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1v20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
           </div>
           <div class="contact-detail-text">+91 74197 59000</div>
         </div>
         <div class="contact-detail reveal">
           <div class="contact-detail-icon">
-            <svg viewbox="0 0 24 24"><path d="m12 2c8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           </div>
-          <div class="contact-detail-text">plot 86 new idc, hsiidc industrial area, rohtak, haryana 124001</div>
+          <div class="contact-detail-text">Plot 86 New IDC, HSIIDC Industrial Area, Rohtak, Haryana 124001</div>
         </div>
       </div>
-      <form class="contact-form reveal" id="contactform" action="https://formsubmit.co/elitepathlogistics2005@gmail.com" method="post" target="formsubmitframe">
-        <input type="hidden" name="_subject" value="new enquiry from elite path logistics website">
+      <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/elitepathlogistics2005@gmail.com" method="POST" target="formSubmitFrame">
+        <input type="hidden" name="_subject" value="New Enquiry from Elite Path Logistics Website">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="your name" required>
-        <input type="email" name="email" placeholder="email address" required>
-        <input type="text" name="company" placeholder="company name">
-        <input type="text" name="shipment" placeholder="shipment details (origin, destination, cargo type)">
-        <textarea name="message" placeholder="tell us more about your logistics needs..."></textarea>
-        <button type="submit">enquire now</button>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="company" placeholder="Company Name">
+        <input type="text" name="shipment" placeholder="Shipment Details (origin, destination, cargo type)">
+        <textarea name="message" placeholder="Tell us more about your logistics needs..."></textarea>
+        <button type="submit">Enquire Now</button>
       </form>
-      <iframe name="formsubmitframe" style="display:none;"></iframe>
+      <iframe name="formSubmitFrame" style="display:none;"></iframe>
     </div>
   </div>
 </section>
 
-<!-- footer -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <p>premium freight and logistics solutions engineered for businesses that demand reliability.</p>
+        <p>Premium freight and logistics solutions engineered for businesses that demand reliability.</p>
       </div>
       <div class="footer-col">
-        <h4>services</h4>
+        <h4>Services</h4>
         <ul>
-          <li><a href="#services">freight transport</a></li>
-          <li><a href="#services">live tracking</a></li>
-          <li><a href="#services">24/7 support</a></li>
-          <li><a href="#services">express delivery</a></li>
+          <li><a href="#services">Freight Transport</a></li>
+          <li><a href="#services">Live Tracking</a></li>
+          <li><a href="#services">24/7 Support</a></li>
+          <li><a href="#services">Express Delivery</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>company</h4>
+        <h4>Company</h4>
         <ul>
-          <li><a href="#about">about us</a></li>
-          <li><a href="#fleet">our fleet</a></li>
-          <li><a href="#contact">careers</a></li>
-          <li><a href="#contact">contact</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#fleet">Our Fleet</a></li>
+          <li><a href="#contact">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>support</h4>
+        <h4>Support</h4>
         <ul>
-          <li><a href="#contact">get a quote</a></li>
-          <li><a href="#contact">track shipment</a></li>
-          <li><a href="#contact">customer service</a></li>
-          <li><a href="#contact">faqs</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+          <li><a href="#contact">Track Shipment</a></li>
+          <li><a href="#contact">Customer Service</a></li>
+          <li><a href="#contact">FAQs</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 elite path logistics. all rights reserved.</p>
+      <p>&copy; 2024 Elite Path Logistics. All rights reserved.</p>
       <div class="footer-social">
-        <a href="#" aria-label="facebook"><svg viewbox="0 0 24 24"><path d="m18 2h-3a5 5 0 00-5 5v3h7v4h3v8h4v-8h3l1-4h-4v7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" aria-label="instagram"><svg viewbox="0 0 24 24"><path d="m7 2h10c2.76 0 5 2.24 5 5v10c0 2.76-2.24 5-5 5h7c-2.76 0-5-2.24-5-5v7c0-2.76 2.24-5 5-5zm0 2c-1.66 0-3 1.34-3 3v10c0 1.66 1.34 3 3 3h10c1.66 0 3-1.34 3-3v7c0-1.66-1.34-3-3-3h7zm5 3.5a4.5 4.5 0 1112 16a4.5 4.5 0 010-9zm0 2a2.5 2.5 0 1012 14a2.5 2.5 0 000-5zm5.25-2.25a1 1 0 11-1 1 1 1 0 011-1z"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10c2.76 0 5 2.24 5 5v10c0 2.76-2.24 5-5 5H7c-2.76 0-5-2.24-5-5V7c0-2.76 2.24-5 5-5zm0 2c-1.66 0-3 1.34-3 3v10c0 1.66 1.34 3 3 3h10c1.66 0 3-1.34 3-3V7c0-1.66-1.34-3-3-3H7zm5 3.5A4.5 4.5 0 1112 16a4.5 4.5 0 010-9zm0 2A2.5 2.5 0 1012 14a2.5 2.5 0 000-5zm5.25-2.25a1 1 0 11-1 1 1 1 0 011-1z"/></svg></a>
       </div>
     </div>
   </div>
 </footer>
 
-<div class="thank-you-modal" id="thankyoumodal" aria-hidden="true">
-  <div class="thank-you-box" role="dialog" aria-modal="true" aria-labelledby="thankyoutitle">
-    <h3 id="thankyoutitle">thank you</h3>
-    <p>we'll contact you shortly</p>
-    <button type="button" id="closethankyou">close</button>
+<div class="thank-you-modal" id="thankYouModal" aria-hidden="true">
+  <div class="thank-you-box" role="dialog" aria-modal="true" aria-labelledby="thankYouTitle">
+    <h3 id="thankYouTitle">Thank you</h3>
+    <p>We'll contact you shortly</p>
+    <button type="button" id="closeThankYou">Close</button>
   </div>
 </div>
 
-<div class="gallery-lightbox" id="gallerylightbox" aria-hidden="true">
-  <button class="lightbox-arrow prev" type="button" id="lightboxprev" aria-label="previous gallery photo">&larr;</button>
-  <img id="gallerylightboximage" src="" alt="gallery preview">
-  <button class="lightbox-arrow next" type="button" id="lightboxnext" aria-label="next gallery photo">&rarr;</button>
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+  <button class="lightbox-arrow prev" type="button" id="lightboxPrev" aria-label="Previous gallery photo">&larr;</button>
+  <img id="galleryLightboxImage" src="" alt="Gallery preview">
+  <button class="lightbox-arrow next" type="button" id="lightboxNext" aria-label="Next gallery photo">&rarr;</button>
 </div>
 
-<!-- scripts -->
+<!-- SCRIPTS -->
 <script>
-const mainnav = document.queryselector('nav');
-let lastscrolly = window.scrolly;
-let lockednavscroll = false;
+const mainNav = document.querySelector('nav');
+let lastScrollY = window.scrollY;
+let lockedNavScroll = false;
 
-function scrolltosection(sectionid) {
-  const target = document.getelementbyid(sectionid);
-  if (!target || !mainnav) return;
+function scrollToSection(sectionId) {
+  const target = document.getElementById(sectionId);
+  if (!target || !mainNav) return;
 
-  lockednavscroll = true;
-  mainnav.classlist.remove('nav-hidden');
+  lockedNavScroll = true;
+  mainNav.classList.remove('nav-hidden');
 
-  const navheight = mainnav.offsetheight;
-  const targety = target.getboundingclientrect().top + window.pageyoffset - navheight;
-  window.scrollto({ top: math.max(targety, 0), behavior: 'smooth' });
+  const navHeight = mainNav.offsetHeight;
+  const targetY = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+  window.scrollTo({ top: Math.max(targetY, 0), behavior: 'smooth' });
 
-  window.settimeout(() => {
-    lockednavscroll = false;
-    lastscrolly = window.scrolly;
+  window.setTimeout(() => {
+    lockedNavScroll = false;
+    lastScrollY = window.scrollY;
   }, 900);
 }
 
-window.addeventlistener('scroll', () => {
-  const currentscrolly = window.scrolly;
-  if (lockednavscroll) {
-    lastscrolly = math.max(currentscrolly, 0);
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  if (lockedNavScroll) {
+    lastScrollY = Math.max(currentScrollY, 0);
     return;
   }
-  if (currentscrolly > lastscrolly && currentscrolly > 120) {
-    mainnav.classlist.add('nav-hidden');
+  if (currentScrollY > lastScrollY && currentScrollY > 120) {
+    mainNav.classList.add('nav-hidden');
   } else {
-    mainnav.classlist.remove('nav-hidden');
+    mainNav.classList.remove('nav-hidden');
   }
-  lastscrolly = math.max(currentscrolly, 0);
+  lastScrollY = Math.max(currentScrollY, 0);
 }, { passive: true });
 
-document.queryselectorall('a[href^="#"]:not([href="#"])').foreach(link => {
-  link.addeventlistener('click', event => {
-    const sectionid = link.getattribute('href').slice(1);
-    if (!document.getelementbyid(sectionid)) return;
-    event.preventdefault();
-    scrolltosection(sectionid);
+document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(link => {
+  link.addEventListener('click', event => {
+    const sectionId = link.getAttribute('href').slice(1);
+    if (!document.getElementById(sectionId)) return;
+    event.preventDefault();
+    scrollToSection(sectionId);
   });
 });
 
-const contactform = document.getelementbyid('contactform');
-const thankyoumodal = document.getelementbyid('thankyoumodal');
-const closethankyou = document.getelementbyid('closethankyou');
+const contactForm = document.getElementById('contactForm');
+const thankYouModal = document.getElementById('thankYouModal');
+const closeThankYou = document.getElementById('closeThankYou');
 
-contactform.addeventlistener('submit', (event) => {
-  settimeout(() => contactform.reset(), 300);
-  thankyoumodal.classlist.add('active');
-  thankyoumodal.setattribute('aria-hidden', 'false');
+contactForm.addEventListener('submit', (event) => {
+  setTimeout(() => contactForm.reset(), 300);
+  thankYouModal.classList.add('active');
+  thankYouModal.setAttribute('aria-hidden', 'false');
 });
 
-closethankyou.addeventlistener('click', () => {
-  thankyoumodal.classlist.remove('active');
-  thankyoumodal.setattribute('aria-hidden', 'true');
+closeThankYou.addEventListener('click', () => {
+  thankYouModal.classList.remove('active');
+  thankYouModal.setAttribute('aria-hidden', 'true');
 });
 
-thankyoumodal.addeventlistener('click', (event) => {
-  if (event.target === thankyoumodal) {
-    thankyoumodal.classlist.remove('active');
-    thankyoumodal.setattribute('aria-hidden', 'true');
+thankYouModal.addEventListener('click', (event) => {
+  if (event.target === thankYouModal) {
+    thankYouModal.classList.remove('active');
+    thankYouModal.setAttribute('aria-hidden', 'true');
   }
 });
 
-const gallerylightbox = document.getelementbyid('gallerylightbox');
-const gallerylightboximage = document.getelementbyid('gallerylightboximage');
-const gallerytrack = document.getelementbyid('gallerytrack');
-const lightboxprev = document.getelementbyid('lightboxprev');
-const lightboxnext = document.getelementbyid('lightboxnext');
-const partnerssection = document.queryselector('.partners-conveyor');
-const contactsection = document.getelementbyid('contact');
-const partnerstrack = document.queryselector('.partners-track');
+const galleryLightbox = document.getElementById('galleryLightbox');
+const galleryLightboxImage = document.getElementById('galleryLightboxImage');
+const galleryTrack = document.getElementById('galleryTrack');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const partnersSection = document.querySelector('.partners-conveyor');
+const contactSection = document.getElementById('contact');
+const partnersTrack = document.querySelector('.partners-track');
 
-if (partnerssection && contactsection) {
-  contactsection.after(partnerssection);
+if (partnersSection && contactSection) {
+  contactSection.after(partnersSection);
 }
 
-if (partnerstrack) {
-  array.from(partnerstrack.children).foreach(card => {
-    const clone = card.clonenode(true);
-    clone.setattribute('aria-hidden', 'true');
-    partnerstrack.appendchild(clone);
+if (partnersTrack) {
+  Array.from(partnersTrack.children).forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    partnersTrack.appendChild(clone);
   });
 }
 
-const originalgalleryitems = array.from(gallerytrack.queryselectorall('.gallery-item[data-image]'));
-const galleryimages = originalgalleryitems.map(item => item.dataset.image);
-let currentgalleryindex = 0;
+const originalGalleryItems = Array.from(galleryTrack.querySelectorAll('.gallery-item[data-image]'));
+const galleryImages = originalGalleryItems.map(item => item.dataset.image);
+let currentGalleryIndex = 0;
 
-if (originalgalleryitems.length % 2 !== 0) {
-  const loopfiller = originalgalleryitems[0].clonenode(true);
-  loopfiller.classlist.remove('reveal', 'visible');
-  loopfiller.classlist.add('gallery-loop-filler');
-  gallerytrack.appendchild(loopfiller);
+if (originalGalleryItems.length % 2 !== 0) {
+  const loopFiller = originalGalleryItems[0].cloneNode(true);
+  loopFiller.classList.remove('reveal', 'visible');
+  loopFiller.classList.add('gallery-loop-filler');
+  galleryTrack.appendChild(loopFiller);
 }
 
-array.from(gallerytrack.queryselectorall('.gallery-item')).foreach(item => {
-  const clone = item.clonenode(true);
-  clone.classlist.remove('reveal', 'visible');
-  gallerytrack.appendchild(clone);
+Array.from(galleryTrack.querySelectorAll('.gallery-item')).forEach(item => {
+  const clone = item.cloneNode(true);
+  clone.classList.remove('reveal', 'visible');
+  galleryTrack.appendChild(clone);
 });
-gallerytrack.classlist.add('is-ready');
+galleryTrack.classList.add('is-ready');
 
-function showgalleryimage(index) {
-  currentgalleryindex = (index + galleryimages.length) % galleryimages.length;
-  gallerylightboximage.src = galleryimages[currentgalleryindex];
+function showGalleryImage(index) {
+  currentGalleryIndex = (index + galleryImages.length) % galleryImages.length;
+  galleryLightboxImage.src = galleryImages[currentGalleryIndex];
 }
 
-gallerytrack.addeventlistener('click', (event) => {
+galleryTrack.addEventListener('click', (event) => {
   const item = event.target.closest('.gallery-item[data-image]');
   if (item) {
-    currentgalleryindex = galleryimages.indexof(item.dataset.image);
-    showgalleryimage(currentgalleryindex);
-    gallerylightbox.classlist.add('active');
-    gallerylightbox.setattribute('aria-hidden', 'false');
+    currentGalleryIndex = galleryImages.indexOf(item.dataset.image);
+    showGalleryImage(currentGalleryIndex);
+    galleryLightbox.classList.add('active');
+    galleryLightbox.setAttribute('aria-hidden', 'false');
   }
 });
 
-gallerylightbox.addeventlistener('click', () => {
-  gallerylightbox.classlist.remove('active');
-  gallerylightbox.setattribute('aria-hidden', 'true');
-  gallerylightboximage.src = '';
+galleryLightbox.addEventListener('click', () => {
+  galleryLightbox.classList.remove('active');
+  galleryLightbox.setAttribute('aria-hidden', 'true');
+  galleryLightboxImage.src = '';
 });
 
-lightboxprev.addeventlistener('click', (event) => {
-  event.stoppropagation();
-  showgalleryimage(currentgalleryindex - 1);
+lightboxPrev.addEventListener('click', (event) => {
+  event.stopPropagation();
+  showGalleryImage(currentGalleryIndex - 1);
 });
 
-lightboxnext.addeventlistener('click', (event) => {
-  event.stoppropagation();
-  showgalleryimage(currentgalleryindex + 1);
+lightboxNext.addEventListener('click', (event) => {
+  event.stopPropagation();
+  showGalleryImage(currentGalleryIndex + 1);
 });
 
-// scroll reveal
-const observer = new intersectionobserver((entries) => {
-  entries.foreach(entry => {
-    if (entry.isintersecting) {
-      entry.target.classlist.add('visible');
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
     }
   });
 }, { threshold: 0.1 });
-document.queryselectorall('.reveal').foreach(el => observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// counter animation
-const counterobserver = new intersectionobserver((entries) => {
-  entries.foreach(entry => {
-    if (entry.isintersecting) {
+// Counter animation
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
       const el = entry.target;
-      const target = parseint(el.dataset.target);
+      const target = parseInt(el.dataset.target);
       const duration = 2000;
       const step = target / (duration / 16);
       let current = 0;
-      const timer = setinterval(() => {
+      const timer = setInterval(() => {
         current += step;
         if (current >= target) {
           current = target;
-          clearinterval(timer);
+          clearInterval(timer);
         }
-        el.textcontent = math.floor(current).tolocalestring() + (el.dataset.suffix || '');
+        el.textContent = Math.floor(current).toLocaleString() + (el.dataset.suffix || '');
       }, 16);
-      counterobserver.unobserve(el);
+      counterObserver.unobserve(el);
     }
   });
 }, { threshold: 0.5 });
-document.queryselectorall('.stat-number[data-target]').foreach(el => counterobserver.observe(el));
+document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObserver.observe(el));
 </script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57mdmcccjxytnnh+zibwzc4jb2rvgvceokyn+l/nllmo8rfyt/gipw2a569ij/3b+0ueasghjuzh/ma3wis/eq==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfcachestatus":true,"cfedge":true,"cfextpri":true,"cfl4":true,"cforigin":true,"cfspeedbrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
