@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elite Path Logistics — On Time. Every Time. Everywhere.</title>
+<link rel="canonical" href="https://elitepathlogistics.in/">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* === RESET & VARIABLES === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --green: #185b38;
+  --green-dark: #0e3a25;
+  --green-light: #36724d;
+  --gold: #f2b705;
+  --gold-light: #ffc928;
+  --white: #ffffff;
+  --off-white: #ebe7dc;
+  --black: #0a0a0a;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-condensed: 'Barlow Condensed', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); background: var(--off-white); color: var(--green-dark); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* === UTILITY === */
+.container { max-width: 1320px; margin: 0 auto; padding: 0 1rem; }
+.hero,
+.services,
+.stats,
+.about,
+.team,
+.fleet,
+.gallery,
+.contact,
+.partners-conveyor,
+footer {
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+
+/* === NAV === */
+nav {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  background: transparent;
+  transition: transform 0.35s ease, background 0.4s ease, border-color 0.4s ease;
+}
+nav.nav-hidden { transform: translateY(-100%); }
+nav .nav-inner {
+  max-width: 1320px; margin: 0 auto; padding: 1.8rem 1rem 0.8rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+nav .nav-logo {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(255,255,255,0.94); padding: 0.3rem 0.55rem;
+  border: 2px solid rgba(242,183,5,0.9); border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+nav .nav-logo img { height: 88px; width: 88px; object-fit: contain; }
+nav .nav-logo span {
+  font-family: var(--font-display); font-size: 1.4rem; color: var(--green);
+  letter-spacing: 2px;
+}
+nav .nav-logo .gold { color: var(--gold); }
+nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+nav ul li a {
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1.1rem;
+  color: var(--white); text-transform: uppercase; letter-spacing: 1.5px;
+  position: relative; padding: 0.25rem 0; transition: color 0.3s;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.45);
+}
+nav ul li a::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+  background: var(--gold); transition: width 0.3s ease;
+}
+nav ul li a:hover { color: var(--gold); }
+nav ul li a:hover::after { width: 100%; }
+nav .nav-cta {
+  background: var(--gold); color: var(--green-dark); padding: 0.5rem 1.4rem;
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1.05rem;
+  text-transform: uppercase; letter-spacing: 1.5px; border: none; cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); transition: all 0.3s;
+}
+nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 28px; height: 2px; background: var(--white); transition: 0.3s; }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh; display: flex; align-items: center; position: relative;
+  background: url('india-trucks-hero.png') center center/cover no-repeat;
+  border-top: 0;
+  overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(14,58,37,0.84) 0%, rgba(24,91,56,0.72) 48%, rgba(14,58,37,0.34) 100%);
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; width: 100%; height: 120px;
+  background: var(--off-white);
+  clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+  display: none;
+}
+.hero-road {
+  position: absolute; top: 0; right: -10%; width: 60%; height: 100%;
+  opacity: 0.1;
+  background: repeating-linear-gradient(
+    -25deg, transparent, transparent 40px, var(--green) 40px, var(--green) 42px
+  );
+}
+.hero-content {
+  position: relative; z-index: 2; max-width: 1320px; margin: 0 auto;
+  padding: 8rem 1rem 6rem; display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center;
+}
+.hero-text h1 {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--white); line-height: 1; letter-spacing: 2px; margin-bottom: 1rem;
+  white-space: nowrap;
+}
+.hero-text h1 .gold { color: var(--gold); }
+.hero-text .tagline {
+  font-family: var(--font-condensed); font-weight: 600; font-size: 1.3rem;
+  color: var(--gold); letter-spacing: 4px; text-transform: uppercase;
+  margin-bottom: 2rem; opacity: 0.9;
+}
+.hero-text p {
+  font-size: 1.1rem; color: rgba(255,255,255,0.82); line-height: 1.7;
+  max-width: 500px; margin-bottom: 2.5rem;
+}
+.hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--green-dark); color: var(--white); padding: 1rem 2.5rem;
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1rem;
+  text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); transition: all 0.3s;
+  box-shadow: inset 0 0 0 2px var(--gold);
+  position: relative; overflow: hidden;
+}
+.btn-primary:hover { background: var(--gold); color: var(--green-dark); transform: translateY(-2px); }
+.btn-secondary {
+  background: var(--green-dark); color: var(--white); padding: 1rem 2.5rem;
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1rem;
+  text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); transition: all 0.3s;
+  box-shadow: inset 0 0 0 2px var(--gold);
+  position: relative; overflow: hidden;
+}
+.btn-secondary:hover { background: var(--gold); color: var(--green-dark); transform: translateY(-2px); }
+.btn-primary::before,
+.btn-secondary::before {
+  content: ''; position: absolute; top: 0; left: -75%; width: 45%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.28), transparent);
+  transform: skewX(-18deg); transition: left 0.6s ease;
+}
+.btn-primary:hover::before,
+.btn-secondary:hover::before {
+  left: 130%;
+}
+/* === SERVICES === */
+.services { padding: 7rem 0; position: relative; background: #e4dfd2; overflow: hidden; }
+.services::after {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(228,223,210,0.97) 0%, rgba(228,223,210,0.9) 48%, rgba(228,223,210,0.84) 100%),
+    radial-gradient(circle at 15% 22%, rgba(242,183,5,0.16) 0, rgba(242,183,5,0.16) 4px, transparent 5px),
+    radial-gradient(circle at 79% 68%, rgba(14,58,37,0.14) 0, rgba(14,58,37,0.14) 3px, transparent 4px),
+    repeating-linear-gradient(0deg, transparent 0, transparent 52px, rgba(14,58,37,0.035) 52px, rgba(14,58,37,0.035) 54px),
+    repeating-linear-gradient(90deg, transparent 0, transparent 72px, rgba(14,58,37,0.028) 72px, rgba(14,58,37,0.028) 74px);
+  opacity: 1;
+  pointer-events: none;
+}
+.services .container { position: relative; z-index: 1; }
+.section-label {
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1.25rem;
+  color: var(--gold); text-transform: uppercase; letter-spacing: 5px;
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;
+}
+.section-label::before,
+.section-label::after {
+  content: ''; width: 56px; height: 2px; background: var(--gold);
+  flex: 0 0 56px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--green-dark); line-height: 1; margin-bottom: 1rem; letter-spacing: 1px;
+  display: inline-block; background: var(--green-dark); color: var(--white);
+  padding: 0.5rem 2rem;
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  box-shadow: 10px 10px 0 rgba(14,58,37,0.12);
+}
+.section-subtitle {
+  font-size: 1.05rem; color: var(--green-light); max-width: 550px;
+  line-height: 1.7; margin-bottom: 3.5rem;
+}
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+}
+.service-card {
+  background: #f7f5ef; padding: 2.5rem 2rem; position: relative;
+  border: 1px solid rgba(14,58,37,0.2); transition: all 0.4s ease;
+  overflow: hidden;
+}
+.service-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0;
+  background: var(--gold); transition: height 0.4s ease;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 24px 55px rgba(14,58,37,0.2); }
+.service-card:hover::before { height: 100%; }
+.service-icon {
+  width: 56px; height: 56px; background: var(--green); display: flex;
+  align-items: center; justify-content: center; margin-bottom: 1.5rem;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+.service-icon svg { width: 28px; height: 28px; fill: var(--gold); }
+.service-card h3 {
+  font-family: var(--font-display); font-size: 1.5rem; color: var(--green-dark);
+  letter-spacing: 1px; margin-bottom: 0.75rem;
+}
+.service-card p { font-size: 0.95rem; color: #5a6b60; line-height: 1.7; }
+
+/* === STATS === */
+.stats {
+  background: #1f5c3a; padding: 5rem 0; position: relative; overflow: hidden;
+}
+.stats::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 54px, rgba(242,183,5,0.16) 54px, rgba(242,183,5,0.16) 57px);
+}
+.stats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
+  position: relative; z-index: 1;
+}
+.stat-item { text-align: center; }
+.stat-number {
+  font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--gold); line-height: 1;
+}
+.stat-label {
+  font-family: var(--font-condensed); font-weight: 600; font-size: 0.9rem;
+  color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 2px;
+  margin-top: 0.5rem;
+}
+
+/* === ABOUT === */
+.about { padding: 7rem 0; background: #ebe7dc; position: relative; overflow: hidden; }
+.about::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(235,231,220,0.9) 0%, rgba(235,231,220,0.96) 56%, rgba(235,231,220,1) 100%),
+    radial-gradient(circle at 12% 24%, rgba(242,183,5,0.18) 0, rgba(242,183,5,0.18) 4px, transparent 5px),
+    radial-gradient(circle at 31% 68%, rgba(14,58,37,0.13) 0, rgba(14,58,37,0.13) 5px, transparent 6px),
+    linear-gradient(135deg, transparent 0, transparent 34%, rgba(14,58,37,0.055) 34.3%, transparent 34.7%),
+    linear-gradient(28deg, transparent 0, transparent 58%, rgba(242,183,5,0.08) 58.3%, transparent 58.8%);
+  opacity: 1;
+  pointer-events: none;
+}
+.about .container { position: relative; z-index: 1; }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+}
+.about-image {
+  position: relative; aspect-ratio: 4/3; background: var(--off-white);
+  overflow: hidden;
+}
+.about-image::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, #ffffff, #f4f1ea);
+}
+.about-image-inner {
+  position: absolute; inset: 2rem; border: 3px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+}
+.about-image-inner img {
+  width: 60%; opacity: 1;
+  animation: aboutLogoRotateSideways 6s linear infinite;
+  transform-style: preserve-3d;
+}
+@keyframes aboutLogoRotateSideways {
+  from { transform: perspective(700px) rotateY(0deg); }
+  to { transform: perspective(700px) rotateY(360deg); }
+}
+.about-text h2 {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--green-dark); line-height: 1; margin-bottom: 1.5rem;
+}
+.about-text p {
+  font-size: 1.05rem; color: #4a5b50; line-height: 1.8; margin-bottom: 1.5rem;
+}
+.about-features {
+  display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem;
+}
+.about-feature {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-family: var(--font-condensed); font-weight: 600; font-size: 0.95rem;
+  color: var(--green); text-transform: uppercase; letter-spacing: 1px;
+}
+.about-feature::before {
+  content: ''; width: 8px; height: 8px; background: var(--gold);
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+/* === TEAM === */
+.team {
+  padding: 7rem 0; background: #0e3a25; position: relative; overflow: hidden;
+}
+.team::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(242,183,5,0.13) 0 2px, transparent 2px 100%),
+    repeating-linear-gradient(135deg, transparent, transparent 58px, rgba(255,255,255,0.05) 58px, rgba(255,255,255,0.05) 60px);
+  background-size: 100% 100%, auto;
+}
+.team .container { position: relative; z-index: 1; }
+.team .section-title { color: var(--white); }
+.team .section-subtitle { color: rgba(255,255,255,0.72); }
+.team-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; margin-top: 3rem;
+}
+.team-card {
+  background: #13482e; border: 3px solid rgba(242,183,5,0.9);
+  padding: 2rem; min-height: 260px; display: flex; flex-direction: column;
+  justify-content: space-between; transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  position: relative; overflow: hidden; background-size: cover; background-position: center;
+}
+.team-card:hover {
+  transform: translateY(-8px); border-color: var(--gold);
+}
+.team-card:nth-child(1) {
+  background-image:
+    linear-gradient(rgba(14,58,37,0.74), rgba(14,58,37,0.82)),
+    url('team-bg-operations.svg');
+}
+.team-card:nth-child(2) {
+  background-image:
+    linear-gradient(rgba(14,58,37,0.74), rgba(14,58,37,0.82)),
+    url('team-bg-fleet.svg');
+}
+.team-card:nth-child(3) {
+  background-image:
+    linear-gradient(rgba(14,58,37,0.74), rgba(14,58,37,0.82)),
+    url('team-bg-dispatch.svg');
+}
+.team-card:nth-child(4) {
+  background-image:
+    linear-gradient(rgba(14,58,37,0.74), rgba(14,58,37,0.82)),
+    url('team-bg-support.svg');
+}
+.team-card:hover {
+  background-size: 108%;
+}
+.team-icon {
+  width: 58px; height: 58px; background: var(--gold); display: flex;
+  align-items: center; justify-content: center; margin-bottom: 1.5rem;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+.team-icon svg { width: 30px; height: 30px; fill: var(--green-dark); }
+.team-card h3 {
+  font-family: var(--font-display); font-size: 1.45rem; color: var(--white);
+  letter-spacing: 1px; margin-bottom: 0.75rem;
+}
+.team-card p { color: rgba(255,255,255,0.68); line-height: 1.7; font-size: 0.95rem; }
+
+/* === FLEET === */
+.fleet {
+  padding: 7rem 0; background: #f5f2e9; position: relative; overflow: hidden;
+}
+.fleet::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(245,242,233,0.98) 0%, rgba(245,242,233,0.92) 100%),
+    radial-gradient(ellipse at 82% 18%, rgba(14,58,37,0.08) 0, transparent 48%),
+    linear-gradient(135deg, transparent 0, transparent 47%, rgba(242,183,5,0.08) 47.2%, transparent 47.5%),
+    repeating-linear-gradient(90deg, transparent 0, transparent 82px, rgba(14,58,37,0.04) 82px, rgba(14,58,37,0.04) 84px),
+    repeating-linear-gradient(0deg, transparent 0, transparent 58px, rgba(14,58,37,0.03) 58px, rgba(14,58,37,0.03) 60px);
+  opacity: 1;
+  pointer-events: none;
+}
+.fleet .container { position: relative; z-index: 1; }
+.fleet-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;
+}
+.fleet-card {
+  background: #ebe7dc; padding: 2rem; text-align: center;
+  border: 1px solid rgba(14,58,37,0.16); transition: all 0.4s;
+  position: relative; overflow: hidden;
+}
+.fleet-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px;
+  background: var(--gold); transform: scaleX(0); transition: transform 0.4s;
+}
+.fleet-card:hover { transform: translateY(-4px); box-shadow: 0 18px 42px rgba(14,58,37,0.18); }
+.fleet-card:hover::after { transform: scaleX(1); }
+.fleet-icon {
+  width: 80px; height: 80px; margin: 0 auto 1.5rem;
+  background: var(--green); display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+}
+.fleet-icon svg { width: 40px; height: 40px; fill: var(--gold); }
+.fleet-card h3 {
+  font-family: var(--font-display); font-size: 1.4rem; color: var(--green-dark);
+  letter-spacing: 1px; margin-bottom: 0.5rem;
+}
+.fleet-card p {
+  font-family: var(--font-condensed); font-weight: 400; font-size: 1.25rem;
+  color: var(--green-dark); line-height: 1.3; letter-spacing: 1px;
+}
+.fleet-subtitle {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--green-dark); line-height: 1; letter-spacing: 1px;
+  margin: 3rem auto; text-align: center; display: table;
+  background: var(--gold); padding: 0.7rem 2.5rem;
+  clip-path: polygon(4% 0, 96% 0, 100% 100%, 0 100%);
+}
+
+/* === GALLERY === */
+.gallery {
+  padding: 7rem 0; background: #0e3a25; position: relative; overflow: hidden;
+}
+.gallery::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(135deg, transparent, transparent 56px, rgba(242,183,5,0.08) 56px, rgba(242,183,5,0.08) 59px);
+}
+.gallery .container { position: relative; z-index: 1; }
+.gallery .section-subtitle { color: rgba(255,255,255,0.72); margin-bottom: 1rem; }
+.gallery-slider { position: relative; margin-top: 0; overflow: hidden; }
+.gallery-grid {
+  display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, 260px);
+  grid-auto-columns: minmax(280px, 340px); gap: 1.25rem;
+  width: max-content; overflow: visible;
+  padding: 1.25rem 0.75rem 2rem; transform: translate3d(0, 0, 0);
+}
+.gallery-grid.is-ready {
+  animation: galleryMarquee 72s linear infinite;
+}
+.gallery-slider:hover .gallery-grid { animation-play-state: paused; }
+.gallery-item {
+  min-height: 0; height: 100%; border: 2px solid rgba(242,183,5,0.55);
+  background-position: center; background-size: cover; position: relative; overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  z-index: 1; cursor: zoom-in; backface-visibility: hidden; will-change: transform;
+}
+.gallery-item.large { min-height: 0; }
+.gallery-item:hover {
+  border-color: var(--gold);
+  transform: scale(1.08);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.38);
+  z-index: 5;
+}
+.gallery-item::after {
+  content: ''; position: absolute; inset: 0;
+  display: none;
+}
+.gallery-lightbox {
+  position: fixed; inset: 0; z-index: 3000; display: none;
+  align-items: center; justify-content: center; padding: 2rem;
+  background: rgba(14,58,37,0.88); cursor: zoom-out;
+}
+.gallery-lightbox.active { display: flex; }
+.gallery-lightbox img {
+  max-width: min(1100px, 94vw); max-height: 86vh; object-fit: contain;
+  border: 3px solid var(--gold); box-shadow: 0 30px 90px rgba(0,0,0,0.55);
+  animation: galleryPop 0.28s ease-out both;
+}
+.lightbox-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 58px; height: 58px; border: 2px solid var(--gold); border-radius: 0;
+  background: rgba(14,58,37,0.88); color: var(--gold); cursor: pointer;
+  font-family: var(--font-condensed); font-size: 2rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.lightbox-arrow:hover {
+  background: var(--gold); color: var(--green-dark); transform: translateY(-50%) scale(1.08);
+}
+.lightbox-arrow.prev { left: 2rem; }
+.lightbox-arrow.next { right: 2rem; }
+@keyframes galleryPop {
+  from { opacity: 0; transform: scale(0.86); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes galleryMarquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* === CONTACT === */
+.contact {
+  padding: 7rem 0; background: var(--off-white); position: relative; overflow: hidden;
+}
+.contact::before {
+  content: ''; position: absolute; inset: 0;
+  background:
+    linear-gradient(90deg, rgba(235,231,220,0.98) 0%, rgba(235,231,220,0.96) 52%, rgba(235,231,220,0.9) 100%),
+    radial-gradient(circle at 70% 22%, rgba(14,58,37,0.08) 0, rgba(14,58,37,0.08) 4px, transparent 5px),
+    radial-gradient(circle at 82% 64%, rgba(242,183,5,0.12) 0, rgba(242,183,5,0.12) 5px, transparent 6px),
+    linear-gradient(150deg, transparent 0, transparent 42%, rgba(14,58,37,0.055) 42.2%, transparent 42.6%),
+    linear-gradient(24deg, transparent 0, transparent 66%, rgba(242,183,5,0.08) 66.2%, transparent 66.7%);
+  opacity: 1;
+  pointer-events: none;
+}
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; position: relative; z-index: 1;
+}
+.contact-info h2 {
+  font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--green-dark); line-height: 1; margin-bottom: 1.5rem;
+}
+.contact-info p {
+  font-size: 1.05rem; color: rgba(14,58,37,0.78); line-height: 1.8; margin-bottom: 2rem;
+}
+.contact-detail {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;
+}
+.contact-detail-icon {
+  width: 44px; height: 44px; background: var(--green-dark);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-detail-icon svg { width: 20px; height: 20px; fill: var(--gold); }
+.contact-detail-text {
+  font-family: var(--font-condensed); font-weight: 600; font-size: 1rem;
+  color: var(--green-dark); letter-spacing: 0.5px;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.contact-form input, .contact-form textarea {
+  background: rgba(255,255,255,0.56); border: 2px solid rgba(14,58,37,0.26);
+  padding: 1rem 1.25rem; font-family: var(--font-body); font-size: 0.95rem;
+  color: var(--green-dark); outline: none; transition: border-color 0.3s, background 0.3s;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+  color: rgba(14,58,37,0.52);
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  background: rgba(255,255,255,0.82); border-color: var(--gold);
+}
+.contact-form textarea { resize: vertical; min-height: 120px; }
+.contact-form button {
+  background: var(--gold); color: var(--green-dark); padding: 1rem 2.5rem;
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1rem;
+  text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%); transition: all 0.3s;
+  align-self: flex-start;
+}
+.contact-form button:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+.services,
+.about,
+.team,
+.fleet,
+.gallery,
+.contact {
+  padding-top: 3.5rem;
+  scroll-margin-top: 0;
+}
+.thank-you-modal {
+  position: fixed; inset: 0; z-index: 2000; display: none;
+  align-items: center; justify-content: center; padding: 1rem;
+  background: rgba(14,58,37,0.72);
+}
+.thank-you-modal.active { display: flex; }
+.thank-you-box {
+  width: min(420px, 100%); background: #f4f1ea; border: 3px solid var(--gold);
+  padding: 2.5rem 2rem; text-align: center; box-shadow: 0 24px 70px rgba(0,0,0,0.28);
+}
+.thank-you-box h3 {
+  font-family: var(--font-display); font-size: 3rem; line-height: 1;
+  color: var(--green-dark); letter-spacing: 1px; margin-bottom: 0.75rem;
+}
+.thank-you-box p {
+  font-family: var(--font-condensed); font-weight: 600; font-size: 1.35rem;
+  color: var(--green); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.thank-you-box button {
+  background: var(--gold); color: var(--green-dark); padding: 0.75rem 2rem;
+  font-family: var(--font-condensed); font-weight: 700; font-size: 0.95rem;
+  text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+}
+.thank-you-box button:hover { background: var(--gold-light); }
+
+/* === PARTNERS === */
+.partners-conveyor {
+  background: var(--green-dark); overflow: hidden; padding: 1.4rem 0 1.6rem;
+}
+.partners-title {
+  font-family: var(--font-display); font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: var(--gold); text-align: center; letter-spacing: 2px;
+  margin-bottom: 1rem; text-transform: uppercase;
+}
+.partners-track {
+  display: flex; width: max-content; gap: 1.5rem;
+  animation: conveyorMove 22s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+.partner-card {
+  width: 140px; height: 140px; flex: 0 0 140px;
+  background: var(--off-white); border: 2px solid rgba(242,183,5,0.7);
+  display: flex; align-items: center; justify-content: center; padding: 0.75rem;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+.partner-card img { width: 100%; height: 100%; object-fit: contain; }
+@keyframes conveyorMove {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+/* === FOOTER === */
+footer {
+  background: var(--off-white); padding: 1.35rem 0 0.8rem;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 1.75rem; margin-bottom: 0.8rem;
+}
+.footer-brand p { font-size: 0.85rem; color: rgba(14,58,37,0.68); line-height: 1.5; max-width: 260px; }
+.footer-col h4 {
+  font-family: var(--font-display); font-size: 1.35rem; color: var(--green-dark);
+  letter-spacing: 1px; margin-bottom: 0.45rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.18rem; }
+.footer-col ul li a {
+  font-size: 0.82rem; color: rgba(14,58,37,0.62); transition: color 0.3s;
+}
+.footer-col ul li a:hover { color: var(--green-dark); }
+.footer-bottom {
+  border-top: none; padding-top: 0.35rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-bottom p { font-size: 0.85rem; color: rgba(14,58,37,0.48); }
+.footer-social { display: flex; gap: 1rem; }
+.footer-social a {
+  width: 36px; height: 36px; background: var(--green-dark);
+  display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+}
+.footer-social a:hover { background: var(--gold); }
+.footer-social a svg { width: 16px; height: 16px; fill: var(--white); }
+.footer-social a:hover svg { fill: var(--green-dark); }
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.gallery .gallery-item.reveal {
+  opacity: 1;
+  transform: none;
+}
+.gallery .gallery-item.reveal.visible:hover {
+  transform: scale(1.08);
+  border-color: var(--gold);
+  box-shadow: 0 26px 60px rgba(0,0,0,0.38);
+  z-index: 5;
+}
+.hero-text h1 { animation: fadeInLeft 1s ease 0.2s both; }
+.hero-text .tagline { animation: fadeInLeft 1s ease 0.4s both; }
+.hero-text p { animation: fadeInLeft 1s ease 0.6s both; }
+.hero-buttons { animation: fadeInLeft 1s ease 0.8s both; }
+
+/* === RESPONSIVE === */
+@media (max-width: 968px) {
+  .hero-content { grid-template-columns: 1fr; text-align: center; padding-top: 7rem; }
+  .hero-text p { margin: 0 auto 2.5rem; }
+  .hero-buttons { justify-content: center; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: none; grid-template-rows: repeat(2, 230px); grid-auto-columns: minmax(240px, 72vw); }
+  .gallery-item.large { grid-column: auto; grid-row: auto; min-height: 300px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  nav ul { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  .gallery-grid { grid-template-columns: none; grid-template-rows: repeat(2, 220px); grid-auto-columns: minmax(220px, 82vw); }
+  .gallery-item, .gallery-item.large { min-height: 0; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  .about-features { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="elite-path-logo-no-white.png" alt="Elite Path Logistics logo">
+    </a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" onclick="this.classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-road"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1><span>ELITE</span><span class="gold">PATH</span><span> LOGISTICS</span></h1>
+      <div class="tagline">On Time. Every Time. Everywhere.</div>
+      <p>Premium freight and logistics solutions engineered for businesses that demand reliability. From local delivery to interstate supply chains, we forge the elite path your cargo deserves.</p>
+      <div class="hero-buttons">
+        <button class="btn-secondary" onclick="scrollToSection('services')">Our Services</button>
+        <button class="btn-primary" onclick="scrollToSection('contact')">Request a Quote</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <div class="about-image-inner">
+          <img src="elite-path-logo-no-white.png" alt="Elite Path Logistics">
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label reveal">Who We Are</div>
+        <h2 class="reveal">Forging Logistics Excellence<br>Since 2007</h2>
+        <p class="reveal">Elite Path Logistics was founded on a simple principle: every shipment deserves the highest standard of care. What began as a regional carrier has grown into a full-spectrum logistics partner trusted by enterprises across the nation.</p>
+        <p class="reveal">Our fleet of 350+ vehicles, combined with cutting-edge route optimization and a team of seasoned dispatchers, ensures your cargo moves efficiently through the safest and fastest corridors available.</p>
+        <p class="reveal">With live tracking, responsive support, and disciplined dispatch planning, we keep every load visible, secure, and on schedule from pickup to destination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-label reveal">Our Team</div>
+    <h2 class="section-title reveal">People Behind Every Delivery</h2>
+    <p class="section-subtitle reveal">A disciplined operations team coordinating dispatch, fleet readiness, route planning, and customer support for dependable interstate movement.</p>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div>
+          <div class="team-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5 3.4 9.7 8 11 4.6-1.3 8-6 8-11V5l-8-3zm0 4.2l4 1.5V11c0 2.9-1.6 5.7-4 7.2-2.4-1.5-4-4.3-4-7.2V7.7l4-1.5z"/></svg>
+          </div>
+          <h3>Operations</h3>
+          <p>Plans each load with clear documentation, route discipline, and accountability from pickup to delivery.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div>
+          <div class="team-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3v13h2a3 3 0 006 0h4a3 3 0 006 0h2v-5l-3-4zM8 18.5A1.5 1.5 0 118 15.5a1.5 1.5 0 010 3zm10 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM17 12V9.5h2.4l1.9 2.5H17z"/></svg>
+          </div>
+          <h3>Fleet Control</h3>
+          <p>Monitors vehicle readiness, driver coordination, and load security before every movement begins.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div>
+          <div class="team-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a8 8 0 00-8 8c0 5.5 8 12 8 12s8-6.5 8-12a8 8 0 00-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z"/></svg>
+          </div>
+          <h3>Dispatch</h3>
+          <p>Keeps shipments moving with live route updates, fast decisions, and round-the-clock coordination.</p>
+        </div>
+      </div>
+      <div class="team-card reveal">
+        <div>
+          <div class="team-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 1a9 9 0 00-9 9v7a3 3 0 003 3h3v-8H5v-2a7 7 0 0114 0v2h-4v8h3a3 3 0 003-3v-7a9 9 0 00-9-9z"/></svg>
+          </div>
+          <h3>Support</h3>
+          <p>Responds quickly with shipment status, delivery updates, and practical help whenever clients need it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label reveal">What We Do</div>
+    <h2 class="section-title reveal">Our Core Services</h2>
+    <p class="section-subtitle reveal">End-to-end logistics solutions built on precision, speed, and an unwavering commitment to getting your goods where they need to be.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>Freight Transport</h3>
+        <p>Full truckload and less-than-truckload shipping across all major states. GPS-tracked, insured, and delivered on schedule.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+        </div>
+        <h3>Live Tracking</h3>
+        <p>Real-time GPS tracking for every shipment. Monitor your cargo location, status, and estimated arrival from any device, anytime.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/></svg>
+        </div>
+        <h3>24/7 Support</h3>
+        <p>Round-the-clock customer support with dedicated account managers. Get instant assistance via phone or email.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        </div>
+        <h3>Supply Chain</h3>
+        <p>Complete supply chain management from procurement logistics to last-mile delivery. Data-driven optimization at every node.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 7h9v-4l9 9-9 9v-4H3v-3h11.5l3-2-3-2H3V7z"/></svg>
+        </div>
+        <h3>Express Delivery</h3>
+        <p>Time-critical shipments with guaranteed delivery windows. Same-day and next-day options for urgent freight needs.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        </div>
+        <h3>Fully Secured Load</h3>
+        <p>Secure loading practices for every shipment. Properly checked, protected, and monitored from pickup to final delivery.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 1c-6.08 0-11 4.92-11 11s4.92 11 11 11 11-4.92 11-11S18.08 1 12 1zm0 20c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9zm.5-14H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+        </div>
+        <h3>On-Time Guarantee</h3>
+        <p>Reliable scheduling and route planning to keep every shipment moving on time, every time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="150" data-suffix="+">0</div>
+        <div class="stat-label">Active Partner Vehicles</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="350" data-suffix="+">0</div>
+        <div class="stat-label">Monthly Shipment Capacity</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="98">0</div>
+        <div class="stat-label">On-Time Guarantee</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number">Pan-India</div>
+        <div class="stat-label">Coverage</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLEET -->
+<section class="fleet" id="fleet">
+  <div class="container">
+    <div class="section-label reveal">Our Fleet</div>
+    <h2 class="section-title reveal">Built for Every Load</h2>
+    <p class="section-subtitle reveal">From last-mile vans to heavy-haul flatbeds, our diverse fleet handles any shipment size with precision and care.</p>
+    <div class="fleet-grid">
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>4W Pickup/LCV</h3>
+        <p>10ft-17ft | 1MT-5MT</p>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>6W LCV/Canter</h3>
+        <p>19ft-22ft | 7.5MT-12.5MT</p>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>10W-14W Lorry/Truck</h3>
+        <p>22ft-30ft | 18MT-30MT</p>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>16W-20W Trailer</h3>
+        <p>30ft-40ft | 35MT-40MT</p>
+      </div>
+    </div>
+    <h3 class="fleet-subtitle reveal">Container Vehicles</h3>
+    <div class="fleet-grid">
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>Single XL</h3>
+        <p>32ft | 7.5MT</p>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>Multi XL</h3>
+        <p>32ft | 18MT</p>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>3XL</h3>
+        <p>32ft | 24.5MT</p>
+      </div>
+      <div class="fleet-card reveal">
+        <div class="fleet-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        </div>
+        <h3>4XL</h3>
+        <p>32ft | 29.5MT</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-label reveal">Gallery</div>
+    <h2 class="section-title reveal">On the Move</h2>
+    <p class="section-subtitle reveal">A look at the road, fleet, and partner network that keeps freight moving across India.</p>
+    <div class="gallery-slider">
+      <div class="gallery-grid" id="galleryTrack">
+        <div class="gallery-item reveal" data-image="gallery/truck-01.jpg" style="background-image: url('gallery/truck-01.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-02.jpg" style="background-image: url('gallery/truck-02.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-03.jpg" style="background-image: url('gallery/truck-03.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-04.jpg" style="background-image: url('gallery/truck-04.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-05.jpg" style="background-image: url('gallery/truck-05.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-06.jpg" style="background-image: url('gallery/truck-06.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-07.jpg" style="background-image: url('gallery/truck-07.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-08.jpg" style="background-image: url('gallery/truck-08.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-09.jpg" style="background-image: url('gallery/truck-09.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck10.jpg" style="background-image: url('gallery/truck10.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-11.jpg" style="background-image: url('gallery/truck-11.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-12.jpg" style="background-image: url('gallery/truck-12.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-13.jpg" style="background-image: url('gallery/truck-13.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-14.jpg" style="background-image: url('gallery/truck-14.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-15.jpg" style="background-image: url('gallery/truck-15.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-16.jpg" style="background-image: url('gallery/truck-16.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-17.jpg" style="background-image: url('gallery/truck-17.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-18.jpg" style="background-image: url('gallery/truck-18.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-19.jpg" style="background-image: url('gallery/truck-19.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-20.jpg" style="background-image: url('gallery/truck-20.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-21.jpg" style="background-image: url('gallery/truck-21.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-22.jpg" style="background-image: url('gallery/truck-22.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-23.jpg" style="background-image: url('gallery/truck-23.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-24.jpg" style="background-image: url('gallery/truck-24.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-25.jpg" style="background-image: url('gallery/truck-25.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-26.jpg" style="background-image: url('gallery/truck-26.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-27.jpg" style="background-image: url('gallery/truck-27.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-28.jpg" style="background-image: url('gallery/truck-28.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-29.jpg" style="background-image: url('gallery/truck-29.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-30.jpg" style="background-image: url('gallery/truck-30.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-31.jpg" style="background-image: url('gallery/truck-31.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-32.jpg" style="background-image: url('gallery/truck-32.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-33.jpg" style="background-image: url('gallery/truck-33.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-34.jpg" style="background-image: url('gallery/truck-34.jpg');">
+        </div>
+        <div class="gallery-item reveal" data-image="gallery/truck-35.jpg" style="background-image: url('gallery/truck-35.jpg');">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners-conveyor" aria-label="Our partners">
+  <h2 class="partners-title">Our Partners</h2>
+  <div class="partners-track">
+    <div class="partner-card"><img src="partner-logos/ardex-endura.jpg" alt="Ardex Endura"></div>
+    <div class="partner-card"><img src="partner-logos/sika.png" alt="Sika"></div>
+    <div class="partner-card"><img src="partner-logos/pioneer-panel-products.jpg" alt="Pioneer Panel Products"></div>
+    <div class="partner-card"><img src="partner-logos/adlerwud.jpg" alt="Adlerwud"></div>
+    <div class="partner-card"><img src="partner-logos/aldura.jpeg" alt="Aldura"></div>
+    <div class="partner-card"><img src="partner-logos/apl-apollo.png" alt="APL Apollo"></div>
+    <div class="partner-card"><img src="partner-logos/bansal.png" alt="Bansal"></div>
+    <div class="partner-card"><img src="partner-logos/fosroc.jpg" alt="Fosroc"></div>
+    <div class="partner-card"><img src="partner-logos/kerakoll.png" alt="Kerakoll"></div>
+    <div class="partner-card"><img src="partner-logos/mapei.jpeg" alt="Mapei"></div>
+    <div class="partner-card"><img src="partner-logos/vectus.jpeg" alt="Vectus"></div>
+    <div class="partner-card"><img src="partner-logos/meraki.jpg" alt="Meraki"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label reveal" style="color: var(--gold);">Get in Touch</div>
+        <h2 class="reveal">Let's Move Your<br>Business Forward</h2>
+        <p class="reveal">Ready to move your goods across the country? ElitePath Logistics is here to provide reliable and efficient transportation services.</p>
+        <div class="contact-detail reveal">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="contact-detail-text"><a href="mailto:elitepathlogistics2005@gmail.com">elitepathlogistics2005@gmail.com</a></div>
+        </div>
+        <div class="contact-detail reveal">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <div class="contact-detail-text">+91 74197 59000</div>
+        </div>
+        <div class="contact-detail reveal">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="contact-detail-text">Plot 86 New IDC, HSIIDC Industrial Area, Rohtak, Haryana 124001</div>
+        </div>
+      </div>
+      <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/elitepathlogistics2005@gmail.com" method="POST" target="formSubmitFrame">
+        <input type="hidden" name="_subject" value="New Enquiry from Elite Path Logistics Website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="company" placeholder="Company Name">
+        <input type="text" name="shipment" placeholder="Shipment Details (origin, destination, cargo type)">
+        <textarea name="message" placeholder="Tell us more about your logistics needs..."></textarea>
+        <button type="submit">Enquire Now</button>
+      </form>
+      <iframe name="formSubmitFrame" style="display:none;"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p>Premium freight and logistics solutions engineered for businesses that demand reliability.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Freight Transport</a></li>
+          <li><a href="#services">Live Tracking</a></li>
+          <li><a href="#services">24/7 Support</a></li>
+          <li><a href="#services">Express Delivery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#fleet">Our Fleet</a></li>
+          <li><a href="#contact">Careers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#contact">Get a Quote</a></li>
+          <li><a href="#contact">Track Shipment</a></li>
+          <li><a href="#contact">Customer Service</a></li>
+          <li><a href="#contact">FAQs</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Elite Path Logistics. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7 2h10c2.76 0 5 2.24 5 5v10c0 2.76-2.24 5-5 5H7c-2.76 0-5-2.24-5-5V7c0-2.76 2.24-5 5-5zm0 2c-1.66 0-3 1.34-3 3v10c0 1.66 1.34 3 3 3h10c1.66 0 3-1.34 3-3V7c0-1.66-1.34-3-3-3H7zm5 3.5A4.5 4.5 0 1112 16a4.5 4.5 0 010-9zm0 2A2.5 2.5 0 1012 14a2.5 2.5 0 000-5zm5.25-2.25a1 1 0 11-1 1 1 1 0 011-1z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="thank-you-modal" id="thankYouModal" aria-hidden="true">
+  <div class="thank-you-box" role="dialog" aria-modal="true" aria-labelledby="thankYouTitle">
+    <h3 id="thankYouTitle">Thank you</h3>
+    <p>We'll contact you shortly</p>
+    <button type="button" id="closeThankYou">Close</button>
+  </div>
+</div>
+
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+  <button class="lightbox-arrow prev" type="button" id="lightboxPrev" aria-label="Previous gallery photo">&larr;</button>
+  <img id="galleryLightboxImage" src="" alt="Gallery preview">
+  <button class="lightbox-arrow next" type="button" id="lightboxNext" aria-label="Next gallery photo">&rarr;</button>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+const mainNav = document.querySelector('nav');
+let lastScrollY = window.scrollY;
+let lockedNavScroll = false;
+
+function scrollToSection(sectionId) {
+  const target = document.getElementById(sectionId);
+  if (!target || !mainNav) return;
+
+  lockedNavScroll = true;
+  mainNav.classList.remove('nav-hidden');
+
+  const navHeight = mainNav.offsetHeight;
+  const targetY = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+  window.scrollTo({ top: Math.max(targetY, 0), behavior: 'smooth' });
+
+  window.setTimeout(() => {
+    lockedNavScroll = false;
+    lastScrollY = window.scrollY;
+  }, 900);
+}
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  if (lockedNavScroll) {
+    lastScrollY = Math.max(currentScrollY, 0);
+    return;
+  }
+  if (currentScrollY > lastScrollY && currentScrollY > 120) {
+    mainNav.classList.add('nav-hidden');
+  } else {
+    mainNav.classList.remove('nav-hidden');
+  }
+  lastScrollY = Math.max(currentScrollY, 0);
+}, { passive: true });
+
+document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(link => {
+  link.addEventListener('click', event => {
+    const sectionId = link.getAttribute('href').slice(1);
+    if (!document.getElementById(sectionId)) return;
+    event.preventDefault();
+    scrollToSection(sectionId);
+  });
+});
+
+const contactForm = document.getElementById('contactForm');
+const thankYouModal = document.getElementById('thankYouModal');
+const closeThankYou = document.getElementById('closeThankYou');
+
+contactForm.addEventListener('submit', (event) => {
+  setTimeout(() => contactForm.reset(), 300);
+  thankYouModal.classList.add('active');
+  thankYouModal.setAttribute('aria-hidden', 'false');
+});
+
+closeThankYou.addEventListener('click', () => {
+  thankYouModal.classList.remove('active');
+  thankYouModal.setAttribute('aria-hidden', 'true');
+});
+
+thankYouModal.addEventListener('click', (event) => {
+  if (event.target === thankYouModal) {
+    thankYouModal.classList.remove('active');
+    thankYouModal.setAttribute('aria-hidden', 'true');
+  }
+});
+
+const galleryLightbox = document.getElementById('galleryLightbox');
+const galleryLightboxImage = document.getElementById('galleryLightboxImage');
+const galleryTrack = document.getElementById('galleryTrack');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const partnersSection = document.querySelector('.partners-conveyor');
+const contactSection = document.getElementById('contact');
+const partnersTrack = document.querySelector('.partners-track');
+
+if (partnersSection && contactSection) {
+  contactSection.after(partnersSection);
+}
+
+if (partnersTrack) {
+  Array.from(partnersTrack.children).forEach(card => {
+    const clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    partnersTrack.appendChild(clone);
+  });
+}
+
+const originalGalleryItems = Array.from(galleryTrack.querySelectorAll('.gallery-item[data-image]'));
+const galleryImages = originalGalleryItems.map(item => item.dataset.image);
+let currentGalleryIndex = 0;
+
+if (originalGalleryItems.length % 2 !== 0) {
+  const loopFiller = originalGalleryItems[0].cloneNode(true);
+  loopFiller.classList.remove('reveal', 'visible');
+  loopFiller.classList.add('gallery-loop-filler');
+  galleryTrack.appendChild(loopFiller);
+}
+
+Array.from(galleryTrack.querySelectorAll('.gallery-item')).forEach(item => {
+  const clone = item.cloneNode(true);
+  clone.classList.remove('reveal', 'visible');
+  galleryTrack.appendChild(clone);
+});
+galleryTrack.classList.add('is-ready');
+
+function showGalleryImage(index) {
+  currentGalleryIndex = (index + galleryImages.length) % galleryImages.length;
+  galleryLightboxImage.src = galleryImages[currentGalleryIndex];
+}
+
+galleryTrack.addEventListener('click', (event) => {
+  const item = event.target.closest('.gallery-item[data-image]');
+  if (item) {
+    currentGalleryIndex = galleryImages.indexOf(item.dataset.image);
+    showGalleryImage(currentGalleryIndex);
+    galleryLightbox.classList.add('active');
+    galleryLightbox.setAttribute('aria-hidden', 'false');
+  }
+});
+
+galleryLightbox.addEventListener('click', () => {
+  galleryLightbox.classList.remove('active');
+  galleryLightbox.setAttribute('aria-hidden', 'true');
+  galleryLightboxImage.src = '';
+});
+
+lightboxPrev.addEventListener('click', (event) => {
+  event.stopPropagation();
+  showGalleryImage(currentGalleryIndex - 1);
+});
+
+lightboxNext.addEventListener('click', (event) => {
+  event.stopPropagation();
+  showGalleryImage(currentGalleryIndex + 1);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Counter animation
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        el.textContent = Math.floor(current).toLocaleString() + (el.dataset.suffix || '');
+      }, 16);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-number[data-target]').forEach(el => counterObserver.observe(el));
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
