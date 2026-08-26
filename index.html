@@ -86,6 +86,13 @@ nav .nav-cta {
   clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%); transition: all 0.3s;
 }
 nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
+.nav-staff-launch {
+  background: var(--gold); color: var(--green-dark); border: 0; padding: 0.55rem 1rem;
+  font-family: var(--font-condensed); font-weight: 700; font-size: 1rem;
+  text-transform: uppercase; letter-spacing: 1.3px; cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 4% 100%); transition: transform .25s ease, background .25s ease;
+}
+.nav-staff-launch:hover { background: var(--gold-light); transform: translateY(-2px); }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { width: 28px; height: 2px; background: var(--white); transition: 0.3s; }
 
@@ -597,6 +604,67 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
 }
 .thank-you-box button:hover { background: var(--gold-light); }
 
+/* === STAFF CONSOLE === */
+.staff-launch {
+  background: transparent; border: 1px solid rgba(14,58,37,0.35); color: var(--green-dark);
+  padding: 0.45rem 0.8rem; font-family: var(--font-condensed); font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.3px; cursor: pointer; transition: all 0.25s ease;
+}
+.staff-launch:hover { background: var(--green-dark); border-color: var(--green-dark); color: var(--gold); }
+.staff-console { position: fixed; inset: 0; z-index: 3000; display: none; background: rgba(7, 27, 17, 0.72); padding: 1rem; overflow-y: auto; }
+.staff-console.active { display: block; }
+.staff-login { width: min(410px, 100%); margin: 8vh auto; background: #f5f3ed; border-top: 5px solid var(--gold); padding: 2.4rem; box-shadow: 0 24px 80px rgba(0,0,0,.4); }
+.staff-login h2 { color: var(--green-dark); font: 2.8rem/1 var(--font-display); letter-spacing: 1px; margin: .45rem 0 .6rem; }
+.staff-login p { color: var(--green-light); font-size: .92rem; line-height: 1.5; margin-bottom: 1.5rem; }
+.staff-login-form { display: grid; gap: 1rem; }
+.staff-login-form label { display: grid; gap: .4rem; color: var(--green-dark); font: 700 .8rem var(--font-condensed); letter-spacing: 1px; text-transform: uppercase; }
+.staff-login-form input { padding: .85rem; border: 1px solid rgba(14,58,37,.3); background: #fff; font: 1rem var(--font-body); }
+.staff-login-form button { background: var(--gold); color: var(--green-dark); border: 0; padding: .85rem; font: 700 1rem var(--font-condensed); letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; }
+.staff-login-form button:hover { background: var(--gold-light); }
+.staff-login-error { min-height: 1.2rem; color: #a21f1f; font-size: .85rem; }
+.staff-logout { background: transparent; border: 1px solid rgba(14,58,37,.3); color: var(--green-dark); padding: .4rem .7rem; font: 700 .8rem var(--font-condensed); letter-spacing: 1px; text-transform: uppercase; cursor: pointer; }
+.staff-shell { width: min(1180px, 100%); min-height: calc(100vh - 2rem); margin: 0 auto; background: #f5f3ed; box-shadow: 0 24px 80px rgba(0,0,0,0.4); display: grid; grid-template-columns: 230px 1fr; }
+#staffWorkspace { display: none !important; }
+.staff-sidebar { background: var(--green-dark); color: var(--white); padding: 2rem 1.25rem; display: flex; flex-direction: column; }
+.staff-brand { font-family: var(--font-display); font-size: 1.9rem; line-height: .92; letter-spacing: 1px; margin-bottom: 3rem; }
+.staff-brand small { display: block; color: var(--gold); font-family: var(--font-condensed); font-size: .85rem; letter-spacing: 2px; margin-top: .55rem; }
+.staff-menu { display: grid; gap: .45rem; }
+.staff-menu button { appearance: none; border: 0; background: transparent; color: rgba(255,255,255,.7); text-align: left; padding: .75rem; font: 700 1rem var(--font-condensed); letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border-left: 3px solid transparent; }
+.staff-menu button:hover, .staff-menu button.active { color: var(--gold); background: rgba(255,255,255,.06); border-left-color: var(--gold); }
+.staff-note { margin-top: auto; font-size: .78rem; color: rgba(255,255,255,.6); line-height: 1.45; }
+.staff-main { padding: 2rem; min-width: 0; }
+.staff-topbar { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+.staff-kicker { color: var(--green-light); font: 700 .85rem var(--font-condensed); letter-spacing: 2px; text-transform: uppercase; }
+.staff-topbar h2 { color: var(--green-dark); font: 2.8rem/1 var(--font-display); letter-spacing: 1px; margin-top: .25rem; }
+.staff-close { width: 40px; height: 40px; border: 1px solid rgba(14,58,37,.3); background: #fff; color: var(--green-dark); font-size: 1.5rem; cursor: pointer; }
+.staff-panel { display: none; }
+.staff-panel.active { display: block; }
+.staff-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem; }
+.staff-metric { background: #fff; border-left: 4px solid var(--gold); padding: 1.1rem; box-shadow: 0 8px 24px rgba(14,58,37,.08); }
+.staff-metric strong { display: block; font: 2.5rem/1 var(--font-display); color: var(--green-dark); }
+.staff-metric span { color: var(--green-light); font: 700 .8rem var(--font-condensed); letter-spacing: 1px; text-transform: uppercase; }
+.staff-card { background: #fff; box-shadow: 0 8px 24px rgba(14,58,37,.08); margin-bottom: 1.25rem; }
+.staff-card-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 1.25rem; border-bottom: 1px solid rgba(14,58,37,.12); }
+.staff-card h3 { color: var(--green-dark); font: 1.5rem var(--font-display); letter-spacing: 1px; }
+.staff-card p { color: var(--green-light); font-size: .9rem; }
+.staff-table-wrap { overflow-x: auto; }
+.staff-table { width: 100%; border-collapse: collapse; min-width: 620px; }
+.staff-table th { padding: .75rem 1.25rem; text-align: left; color: var(--green-light); font: 700 .78rem var(--font-condensed); letter-spacing: 1px; text-transform: uppercase; background: rgba(24,91,56,.05); }
+.staff-table td { padding: .9rem 1.25rem; border-top: 1px solid rgba(14,58,37,.08); color: #345444; font-size: .9rem; }
+.staff-table td strong { color: var(--green-dark); }
+.staff-status { display: inline-block; padding: .25rem .5rem; font: 700 .72rem var(--font-condensed); letter-spacing: .8px; text-transform: uppercase; background: #e8f1e9; color: var(--green); }
+.staff-status.pending { background: #fff1c7; color: #775600; }
+.staff-status.in-transit { background: #dcecf7; color: #225a7c; }
+.staff-status.delivered { background: #e1f0e3; color: #236136; }
+.staff-action { background: var(--green-dark); color: #fff; border: 0; padding: .4rem .65rem; cursor: pointer; font: 700 .75rem var(--font-condensed); letter-spacing: 1px; text-transform: uppercase; }
+.staff-action:hover { background: var(--green); }
+.staff-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 1.25rem; }
+.staff-form label { display: grid; gap: .4rem; color: var(--green-dark); font: 700 .8rem var(--font-condensed); text-transform: uppercase; letter-spacing: 1px; }
+.staff-form input, .staff-form select { padding: .75rem; border: 1px solid rgba(14,58,37,.25); font: .95rem var(--font-body); color: var(--green-dark); }
+.staff-form .staff-action { align-self: end; padding: .8rem; }
+.staff-empty { padding: 1.5rem; color: var(--green-light); }
+@media (max-width: 720px) { .staff-shell { grid-template-columns: 1fr; } .staff-sidebar { padding: 1rem; } .staff-brand { margin-bottom: 1rem; } .staff-menu { grid-template-columns: repeat(3, 1fr); } .staff-menu button { padding: .5rem; font-size: .85rem; } .staff-note { display: none; } .staff-main { padding: 1.25rem; } .staff-topbar h2 { font-size: 2.2rem; } .staff-metrics, .staff-form { grid-template-columns: 1fr; } .staff-login { margin: 3vh auto; padding: 1.75rem; } }
+
 /* === PARTNERS === */
 .partners-conveyor {
   background: var(--green-dark); overflow: hidden; padding: 1.4rem 0 1.6rem;
@@ -727,6 +795,7 @@ footer {
       <li><a href="#fleet">Fleet</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><button class="nav-staff-launch" type="button" id="staffLaunch">Staff Portal</button></li>
     </ul>
     <div class="hamburger" onclick="this.classList.toggle('active')">
       <span></span><span></span><span></span>
@@ -1181,6 +1250,51 @@ footer {
   </div>
 </div>
 
+<div class="staff-console" id="staffConsole" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="staffConsoleTitle">
+  <div class="staff-login" id="staffLogin">
+    <div class="staff-kicker">Private access</div>
+    <h2>Staff login</h2>
+    <p>Enter your Elite Path staff credentials to open the operations workspace.</p>
+    <form class="staff-login-form" id="staffLoginForm">
+      <label>Username<input name="username" autocomplete="username" required></label>
+      <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+      <p class="staff-login-error" id="staffLoginError" role="alert"></p>
+      <button type="submit">Sign in</button>
+    </form>
+  </div>
+  <div class="staff-shell" id="staffWorkspace" hidden>
+    <aside class="staff-sidebar">
+      <div class="staff-brand">ELITE PATH<small>Staff Console</small></div>
+      <div class="staff-menu" role="tablist" aria-label="Staff console sections">
+        <button type="button" class="active" data-staff-tab="overview">Overview</button>
+        <button type="button" data-staff-tab="shipments">Shipments</button>
+        <button type="button" data-staff-tab="enquiries">Enquiries</button>
+      </div>
+    </aside>
+    <main class="staff-main">
+      <div class="staff-topbar">
+        <div><div class="staff-kicker">Operations workspace</div><h2 id="staffConsoleTitle">Good morning, team</h2></div>
+        <div><button class="staff-logout" id="staffLogout" type="button">Sign out</button> <button class="staff-close" id="staffClose" type="button" aria-label="Close staff portal">&times;</button></div>
+      </div>
+      <section class="staff-panel active" data-staff-panel="overview">
+        <div class="staff-metrics">
+          <div class="staff-metric"><strong id="shipmentCount">0</strong><span>Active shipments</span></div>
+          <div class="staff-metric"><strong id="pendingCount">0</strong><span>Pending enquiries</span></div>
+          <div class="staff-metric"><strong id="deliveredCount">0</strong><span>Delivered today</span></div>
+        </div>
+        <div class="staff-card"><div class="staff-card-header"><div><h3>Dispatch snapshot</h3><p>Latest shipment activity</p></div></div><div class="staff-table-wrap"><table class="staff-table"><thead><tr><th>Reference</th><th>Route</th><th>Status</th></tr></thead><tbody id="overviewShipments"></tbody></table></div></div>
+      </section>
+      <section class="staff-panel" data-staff-panel="shipments">
+        <div class="staff-card"><div class="staff-card-header"><div><h3>Add shipment</h3><p>Create a dispatch item for the local board.</p></div></div><form class="staff-form" id="shipmentForm"><label>Reference<input name="reference" required placeholder="ELP-1048"></label><label>Route<input name="route" required placeholder="Rohtak → Delhi"></label><label>Status<select name="status"><option>Pending</option><option>In transit</option><option>Delivered</option></select></label><button class="staff-action" type="submit">Add shipment</button></form></div>
+        <div class="staff-card"><div class="staff-card-header"><div><h3>Shipment board</h3><p>Click a status to move the shipment forward.</p></div></div><div class="staff-table-wrap"><table class="staff-table"><thead><tr><th>Reference</th><th>Route</th><th>Status</th><th></th></tr></thead><tbody id="shipmentRows"></tbody></table></div></div>
+      </section>
+      <section class="staff-panel" data-staff-panel="enquiries">
+        <div class="staff-card"><div class="staff-card-header"><div><h3>Customer enquiries</h3><p>New quote requests submitted from this browser appear here.</p></div></div><div class="staff-table-wrap"><table class="staff-table"><thead><tr><th>Customer</th><th>Contact</th><th>Message</th><th>Status</th></tr></thead><tbody id="enquiryRows"></tbody></table></div></div>
+      </section>
+    </main>
+  </div>
+</div>
+
 <!-- SCRIPTS -->
 <script>
 const mainNav = document.querySelector('nav');
@@ -1223,6 +1337,94 @@ const partnersTrack = document.querySelector('.partners-track');
 const contactForm = document.getElementById('contactForm');
 const thankYouModal = document.getElementById('thankYouModal');
 const thankYouClose = document.getElementById('thankYouClose');
+const staffConsole = document.getElementById('staffConsole');
+const staffLaunch = document.getElementById('staffLaunch');
+const staffClose = document.getElementById('staffClose');
+const staffLogin = document.getElementById('staffLogin');
+const staffWorkspace = document.getElementById('staffWorkspace');
+const staffLoginForm = document.getElementById('staffLoginForm');
+const staffLoginError = document.getElementById('staffLoginError');
+const staffLogout = document.getElementById('staffLogout');
+const shipmentForm = document.getElementById('shipmentForm');
+const shipmentRows = document.getElementById('shipmentRows');
+const overviewShipments = document.getElementById('overviewShipments');
+const enquiryRows = document.getElementById('enquiryRows');
+
+const staffStorageKeys = { shipments: 'elitePathStaffShipments', enquiries: 'elitePathStaffEnquiries' };
+const defaultShipments = [
+  { reference: 'ELP-1042', route: 'Rohtak → Jaipur', status: 'In transit' },
+  { reference: 'ELP-1041', route: 'Delhi → Chandigarh', status: 'Pending' },
+  { reference: 'ELP-1039', route: 'Gurugram → Rohtak', status: 'Delivered' }
+];
+
+function readStaffData(key, fallback) {
+  try { return JSON.parse(localStorage.getItem(key)) || fallback; } catch { return fallback; }
+}
+function writeStaffData(key, value) { localStorage.setItem(key, JSON.stringify(value)); }
+function statusClass(status) { return status.toLowerCase().replace(/\s+/g, '-'); }
+function escapeHtml(value) {
+  const element = document.createElement('div');
+  element.textContent = value || '';
+  return element.innerHTML;
+}
+function renderStaffConsole() {
+  const shipments = readStaffData(staffStorageKeys.shipments, defaultShipments);
+  const enquiries = readStaffData(staffStorageKeys.enquiries, []);
+  document.getElementById('shipmentCount').textContent = shipments.filter(item => item.status !== 'Delivered').length;
+  document.getElementById('pendingCount').textContent = enquiries.filter(item => item.status === 'New').length;
+  document.getElementById('deliveredCount').textContent = shipments.filter(item => item.status === 'Delivered').length;
+  const shipmentMarkup = shipments.map((item, index) => `<tr><td><strong>${escapeHtml(item.reference)}</strong></td><td>${escapeHtml(item.route)}</td><td><span class="staff-status ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td><td><button type="button" class="staff-action" data-advance-shipment="${index}">Advance</button></td></tr>`).join('');
+  shipmentRows.innerHTML = shipmentMarkup || '<tr><td colspan="4" class="staff-empty">No shipments added yet.</td></tr>';
+  overviewShipments.innerHTML = shipments.slice(0, 4).map(item => `<tr><td><strong>${escapeHtml(item.reference)}</strong></td><td>${escapeHtml(item.route)}</td><td><span class="staff-status ${statusClass(item.status)}">${escapeHtml(item.status)}</span></td></tr>`).join('') || '<tr><td colspan="3" class="staff-empty">No shipment activity yet.</td></tr>';
+  enquiryRows.innerHTML = enquiries.map(item => `<tr><td><strong>${escapeHtml(item.name)}</strong></td><td>${escapeHtml(item.mobile || item.email)}</td><td>${escapeHtml(item.message || 'Quote request')}</td><td><span class="staff-status ${item.status === 'New' ? 'pending' : ''}">${escapeHtml(item.status)}</span></td></tr>`).join('') || '<tr><td colspan="4" class="staff-empty">No local enquiries yet.</td></tr>';
+}
+function showStaffWorkspace() {
+  staffWorkspace.hidden = true;
+  staffLoginForm.hidden = true;
+  staffLogin.querySelector('p').textContent = 'You are signed in securely.';
+}
+function showStaffLogin(message = '') {
+  staffWorkspace.hidden = true; staffLogin.hidden = false; staffLoginForm.hidden = false;
+  staffLogin.querySelector('p').textContent = 'Enter your Elite Path staff credentials to access the private portal.';
+  staffLoginError.textContent = message;
+}
+async function openStaffConsole() {
+  staffConsole.classList.add('active'); staffConsole.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; showStaffLogin();
+  try {
+    const response = await fetch('/api/session', { credentials: 'same-origin' });
+    if (response.ok && (await response.json()).authenticated) showStaffWorkspace();
+  } catch { showStaffLogin('Login is available after this site is deployed to Vercel.'); }
+}
+function closeStaffConsole() { staffConsole.classList.remove('active'); staffConsole.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; staffLoginForm.reset(); }
+
+if (staffLaunch) staffLaunch.addEventListener('click', openStaffConsole);
+staffClose.addEventListener('click', closeStaffConsole);
+staffConsole.addEventListener('click', event => { if (event.target === staffConsole) closeStaffConsole(); });
+staffLoginForm.addEventListener('submit', async event => {
+  event.preventDefault(); staffLoginError.textContent = '';
+  const button = staffLoginForm.querySelector('button'); button.disabled = true; button.textContent = 'Signing in…';
+  try {
+    const formData = new FormData(staffLoginForm);
+    const response = await fetch('/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ username: formData.get('username'), password: formData.get('password') }) });
+    if (!response.ok) { const body = await response.json().catch(() => ({})); throw new Error(body.error || 'Unable to sign in.'); }
+    staffLoginForm.reset(); showStaffWorkspace();
+  } catch (error) { staffLoginError.textContent = error.message || 'Unable to sign in. Please try again.'; }
+  finally { button.disabled = false; button.textContent = 'Sign in'; }
+});
+staffLogout.addEventListener('click', async () => { try { await fetch('/api/logout', { method: 'POST', credentials: 'same-origin' }); } finally { showStaffLogin(); } });
+document.querySelectorAll('[data-staff-tab]').forEach(button => button.addEventListener('click', () => {
+  document.querySelectorAll('[data-staff-tab], [data-staff-panel]').forEach(item => item.classList.remove('active'));
+  button.classList.add('active'); document.querySelector(`[data-staff-panel="${button.dataset.staffTab}"]`).classList.add('active');
+}));
+shipmentForm.addEventListener('submit', event => {
+  event.preventDefault(); const formData = new FormData(shipmentForm); const shipments = readStaffData(staffStorageKeys.shipments, defaultShipments);
+  shipments.unshift({ reference: formData.get('reference'), route: formData.get('route'), status: formData.get('status') }); writeStaffData(staffStorageKeys.shipments, shipments); shipmentForm.reset(); renderStaffConsole();
+});
+shipmentRows.addEventListener('click', event => {
+  const button = event.target.closest('[data-advance-shipment]'); if (!button) return;
+  const shipments = readStaffData(staffStorageKeys.shipments, defaultShipments); const shipment = shipments[Number(button.dataset.advanceShipment)];
+  shipment.status = shipment.status === 'Pending' ? 'In transit' : shipment.status === 'In transit' ? 'Delivered' : 'Delivered'; writeStaffData(staffStorageKeys.shipments, shipments); renderStaffConsole();
+});
 
 function closeThankYouModal() {
   if (!thankYouModal) return;
@@ -1241,6 +1443,10 @@ if (contactForm) {
 
 if (contactForm && thankYouModal) {
   contactForm.addEventListener('submit', () => {
+    const formData = new FormData(contactForm);
+    const enquiries = readStaffData(staffStorageKeys.enquiries, []);
+    enquiries.unshift({ name: formData.get('name'), email: formData.get('email'), mobile: formData.get('mobile'), message: formData.get('message'), status: 'New' });
+    writeStaffData(staffStorageKeys.enquiries, enquiries);
     thankYouModal.classList.add('active');
     thankYouModal.setAttribute('aria-hidden', 'false');
     setTimeout(() => contactForm.reset(), 400);
@@ -1258,7 +1464,7 @@ if (thankYouModal) {
 }
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape') closeThankYouModal();
+  if (event.key === 'Escape') { closeThankYouModal(); closeStaffConsole(); }
 });
 
 
