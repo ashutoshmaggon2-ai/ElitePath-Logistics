@@ -560,6 +560,7 @@ nav .nav-cta:hover { background: var(--gold-light); transform: scale(1.05); }
   align-self: flex-start;
 }
 .contact-form button:hover { background: var(--gold-light); transform: translateY(-2px); }
+.contact-submit-frame { display: none; }
 
 .services,
 .about,
@@ -1099,7 +1100,7 @@ footer {
           <div class="contact-detail-text">Plot 86 New IDC, HSIIDC Industrial Area, Rohtak, Haryana 124001</div>
         </div>
       </div>
-      <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/info@elitepathlogistics.in" method="POST">
+      <form class="contact-form reveal" id="contactForm" action="https://formsubmit.co/info@elitepathlogistics.in" method="POST" target="contactSubmitFrame">
         <input type="hidden" name="_subject" value="New Enquiry from Elite Path Logistics Website">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_url" value="https://elitepathlogistics.in/">
@@ -1116,6 +1117,7 @@ footer {
         <textarea name="message" placeholder="Tell us more about your logistics needs..."></textarea>
         <button type="submit">Enquire Now</button>
       </form>
+      <iframe class="contact-submit-frame" name="contactSubmitFrame" title="Contact form submission" aria-hidden="true"></iframe>
     </div>
   </div>
 </section>
@@ -1171,6 +1173,14 @@ footer {
   <button class="lightbox-arrow next" type="button" id="lightboxNext" aria-label="Next gallery photo">&rarr;</button>
 </div>
 
+<div class="thank-you-modal" id="thankYouModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="thankYouTitle">
+  <div class="thank-you-box">
+    <h3 id="thankYouTitle">Thank You</h3>
+    <p>Thank you for submitting. One of our staff will contact you shortly.</p>
+    <button type="button" id="thankYouClose">Close</button>
+  </div>
+</div>
+
 <!-- SCRIPTS -->
 <script>
 const mainNav = document.querySelector('nav');
@@ -1210,6 +1220,38 @@ const lightboxNext = document.getElementById('lightboxNext');
 const partnersSection = document.querySelector('.partners-conveyor');
 const contactSection = document.getElementById('contact');
 const partnersTrack = document.querySelector('.partners-track');
+const contactForm = document.getElementById('contactForm');
+const thankYouModal = document.getElementById('thankYouModal');
+const thankYouClose = document.getElementById('thankYouClose');
+
+function closeThankYouModal() {
+  if (!thankYouModal) return;
+  thankYouModal.classList.remove('active');
+  thankYouModal.setAttribute('aria-hidden', 'true');
+}
+
+if (contactForm && thankYouModal) {
+  contactForm.addEventListener('submit', () => {
+    thankYouModal.classList.add('active');
+    thankYouModal.setAttribute('aria-hidden', 'false');
+    setTimeout(() => contactForm.reset(), 400);
+  });
+}
+
+if (thankYouClose) {
+  thankYouClose.addEventListener('click', closeThankYouModal);
+}
+
+if (thankYouModal) {
+  thankYouModal.addEventListener('click', event => {
+    if (event.target === thankYouModal) closeThankYouModal();
+  });
+}
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeThankYouModal();
+});
+
 
 if (partnersSection && contactSection) {
   contactSection.after(partnersSection);
