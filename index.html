@@ -1110,7 +1110,7 @@ footer {
         <input type="hidden" name="country_code" value="+91">
         <div class="phone-field">
           <span class="phone-prefix">🇮🇳 +91</span>
-          <input type="tel" name="mobile" placeholder="Mobile Number" inputmode="numeric" required>
+          <input type="tel" name="mobile" placeholder="10 Digit Mobile Number" inputmode="numeric" pattern="[0-9]{10}" minlength="10" maxlength="10" title="Enter 10 digits" required>
         </div>
         <input type="text" name="company" placeholder="Company Name">
         <input type="text" name="shipment" placeholder="Shipment Details (origin, destination, cargo type)">
@@ -1228,6 +1228,15 @@ function closeThankYouModal() {
   if (!thankYouModal) return;
   thankYouModal.classList.remove('active');
   thankYouModal.setAttribute('aria-hidden', 'true');
+}
+
+if (contactForm) {
+  const mobileInput = contactForm.querySelector('input[name="mobile"]');
+  if (mobileInput) {
+    mobileInput.addEventListener('input', () => {
+      mobileInput.value = mobileInput.value.replace(/\D/g, '').slice(0, 10);
+    });
+  }
 }
 
 if (contactForm && thankYouModal) {
