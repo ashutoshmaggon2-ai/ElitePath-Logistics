@@ -10,7 +10,7 @@ function getCookie(request, name) {
 }
 function sign(value) { return crypto.createHmac('sha256', process.env.ADMIN_SESSION_SECRET).update(value).digest('base64url'); }
 function constantTimeMatch(provided, expected) {
-  const left = Buffer.from(provided || ''); const right = Buffer.from(expected || '');
+  const left = Buffer.from(String(provided || '').trim()); const right = Buffer.from(String(expected || '').trim());
   return left.length === right.length && crypto.timingSafeEqual(left, right);
 }
 export function validCredentials(username, password) {
